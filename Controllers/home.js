@@ -1,6 +1,6 @@
-
+import mongoose from 'mongoose'
 
 export const home = (req,res)=>{
     console.log(req.body);
-    res.render("home.ejs")
+    res.status(200).render("home.ejs")
 }
