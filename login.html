@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login Page</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      display: flex;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    .container {
+      display: flex;
+      width: 100%;
+      height: 100vh;
+    }
+
+    .background-section {
+      flex: 1;
+      background-image: url("https://images-cdn.welcomesoftware.com/Zz0zZTliMjQ4MzhlNGExMWViYmJiMjFiZTI2ZWNmN2MzZA==");
+      background-size: cover;
+      background-position: center;
+    }
+
+    .content-section {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #f9f9f9;
+    }
+
+    .form {
+      width: 70%;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .form h2 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .form-group {
+      margin-bottom: 15px;
+    }
+
+    .two-fields {
+      display: flex;
+      gap: 10px;
+    }
+
+    label {
+      display: block;
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+
+    input {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      transition: border-color 0.3s;
+    }
+
+    input:focus {
+      outline: none;
+      border-color: #0062FF;
+    }
+
+    button {
+      background-color: #0062FF;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      padding: 10px 20px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+      width: 100%;
+    }
+
+    button:hover {
+      background-color: #0040FF;
+    }
+
+    .options {
+      margin-top: 20px;
+      text-align: center;
+    }
+
+    .options a {
+      color: #0062FF;
+      text-decoration: underline;
+    }
+
+    .social-buttons {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 20px;
+    }
+
+    .social-button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: #fff;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      padding: 10px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+      width: 100%;
+    }
+
+    .social-button img {
+      width: 20px;
+      height: 20px;
+      margin-right: 10px;
+    }
+
+    .social-button:hover {
+      background-color: #f0f0f0;
+    }
+
+    .form-group.two-fields input[type="text"] {
+      padding-left: 20px;
+    }
+
+    .form-group input[type="text"]::placeholder {
+      content: "\00a0\00a0\00a0\00a0";
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="background-section"></div>
+    <div class="content-section">
+      <div class="form">
+        <h2>Login</h2>
+        <form action="#" method="post">
+          <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+          </div>
+          <div class="form-group">
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+          </div>
+          <button type="submit">Log In</button>
+        </form>
+        <div class="options">
+          <a href="#">Don't have an account?<a href="./sign.html" class="sign-in">Sign In</a>
+        </div>
+        <div class="social-buttons">
+          <div class="social-button">
+            <img src="https://www.transparentpng.com/thumb/google-logo/colorful-google-logo-transparent-clipart-download-u3DWLj.png" alt="Google Icon">
+            Log In with Google
+          </div>
+          <div class="social-button">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/2021_Facebook_icon.svg/1024px-2021_Facebook_icon.svg.png" alt="Facebook Icon">
+            Log In with Facebook
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
