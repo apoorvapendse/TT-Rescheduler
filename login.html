@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -137,8 +138,15 @@
     .form-group input[type="text"]::placeholder {
       content: "\00a0\00a0\00a0\00a0";
     }
+
+    @media (max-width: 768px) {
+      .background-section {
+        display: none;
+      }
+    }
   </style>
 </head>
+
 <body>
   <div class="container">
     <div class="background-section"></div>
@@ -161,11 +169,15 @@
         </div>
         <div class="social-buttons">
           <div class="social-button">
-            <img src="https://www.transparentpng.com/thumb/google-logo/colorful-google-logo-transparent-clipart-download-u3DWLj.png" alt="Google Icon">
+            <img
+              src="https://www.transparentpng.com/thumb/google-logo/colorful-google-logo-transparent-clipart-download-u3DWLj.png"
+              alt="Google Icon">
             Log In with Google
           </div>
           <div class="social-button">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/2021_Facebook_icon.svg/1024px-2021_Facebook_icon.svg.png" alt="Facebook Icon">
+            <img
+              src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/2021_Facebook_icon.svg/1024px-2021_Facebook_icon.svg.png"
+              alt="Facebook Icon">
             Log In with Facebook
           </div>
         </div>
@@ -173,4 +185,5 @@
     </div>
   </div>
 </body>
+
 </html>
