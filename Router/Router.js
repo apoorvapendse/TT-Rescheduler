@@ -6,5 +6,9 @@ router.get("/",home)
 
 router.get("/login", login)
 
+router.post("/login", (req, res) => {
+    
+})
+
 
 export default router
