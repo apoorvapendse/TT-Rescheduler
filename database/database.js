@@ -4,12 +4,21 @@ import dotenv from 'dotenv'
 dotenv.config();
     
 
- const connectDB = async () => {
+const connectDB = async () => {
 
-        mongoose.set('strictQuery', false);
-        const conn = await mongoose.connect(process.env.MONGO_URI, {
-            dbName: "TTRS"
-        }).then(() => console.log("database connected")).catch((e) => { console.log(e) })
-    }
+    mongoose.set('strictQuery', false);
+    const conn = await mongoose.connect(process.env.MONGO_URI, {
+        dbName: "TTRS"
+    }).then(() => console.log("database connected"))
+    .catch((e) => { console.log(e) })
+}
 
-export default connectDB
+const UserSchema = new mongoose.Schema({
+    email: String,
+    password: String
+})
+
+const UserModel = mongoose.model("users", UserSchema)
+
+
+export {connectDB, UserModel}
