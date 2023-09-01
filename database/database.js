@@ -13,10 +13,12 @@ const connectDB = async () => {
     .catch((e) => { console.log(e) })
 }
 
-const UserSchema = new mongoose.Schema{
+const UserSchema = new mongoose.Schema({
     email: String,
     password: String
-}
+})
+
+const UserModel = mongoose.model("users", UserSchema)
 
 
 export default connectDB

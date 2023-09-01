@@ -1,6 +1,7 @@
 import { log } from 'console';
 import mongoose from 'mongoose'
 import path from 'path'
+import bcrypt from 'bcrypt'
 
 
 const home = (req, res) => {
