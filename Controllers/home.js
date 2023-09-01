@@ -8,7 +8,7 @@ const home = (req,res)=>{
     res.status(200).render("home.ejs")
 }
 
-const login = (req, res) => {
+const loginPage = (req, res) => {
     const url = new URL(import.meta.url);
     const basePath = path.dirname(url.pathname);
     const options = {
@@ -17,4 +17,9 @@ const login = (req, res) => {
     res.status(200).sendFile('login.html', options)
 }
 
-export {home, login}
+const auth = (req, res) => {
+    console.log(req.body.email, req.body.password)
+
+}
+
+export {home, loginPage, auth}
