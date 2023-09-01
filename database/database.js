@@ -21,4 +21,4 @@ const UserSchema = new mongoose.Schema({
 const UserModel = mongoose.model("users", UserSchema)
 
 
-export default connectDB
+export {connectDB, UserModel}
