@@ -3,6 +3,7 @@ import mongoose from "mongoose";
 const adminSchema = new mongoose.Schema({
   UID: String,
   name: String,
+  email: String,
   profs: [Number],
   password: String,
 });

@@ -4,12 +4,13 @@ const router = express.Router();
 
 router.get("/", controllers.home);
 
-router.get("/login-prof", controllers.userLoginGet)
-router.post("/login", controllers.userLoginPost)
+router.get("/login-prof", controllers.profLoginGet);
+router.post("/login-prof", controllers.profLoginPost);
 
-router.get("/login-admin", controllers.adminLoginGet)
-router.post("/login-admin", controllers.adminLoginPost)
+router.get("/signup-admin", controllers.adminSignupGet);
+router.post("/signup-admin", controllers.adminSignupPost);
 
+router.get("/login-admin", controllers.adminLoginGet);
+router.post("/login-admin", controllers.adminLoginPost);
 
-export default router
-
+export default router;
