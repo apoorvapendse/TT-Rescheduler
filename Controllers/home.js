@@ -7,7 +7,7 @@ import { UserModel } from '../database/database.js';
 
 const home = (req, res) => {
     console.log(req.body);
-    res.status(200).render("home.ejs")
+    res.status(200).render("index.ejs")
 }
 
 // to render loginpage in browser
@@ -21,7 +21,7 @@ const loginPage = (req, res) => {
 }
 
 // to handle post req from login page
-const auth = async (req, res) => {
+const userLoginPost = async (req, res) => {
     const user = await UserModel.findOne({email: req.body.email})
     if(user){
         if(await bcrypt.compare(req.body.password, user.password))
@@ -35,4 +35,4 @@ const auth = async (req, res) => {
 }
 
 
-export {home, loginPage, auth}
+export {home, loginPage, userLoginPost}
