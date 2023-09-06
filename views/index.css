@@ -1,0 +1,71 @@
+body {
+    background-image: url
+      ("https://img.freepik.com/free-photo/sand-hourglass-vintage-clock-timer_107791-16186.jpg?w=1060&t=st=1692794717~exp=1692795317~hmac=d93fdc71300d7a7b86252845067ebf891795f1d496736a1ab3cd27dca92e3936");
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed; 
+  margin: 0; 
+  padding: 0; 
+  height: 100vh; 
+  overflow: hidden; 
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  }
+
+  .container {
+    width: 600px;
+    margin: 0 auto;
+  }
+
+  .heading {
+    text-align: center;
+    font-size: 40px;
+    font-family: "Roboto", sans-serif;
+    font-weight: bold;
+    color: #8B4513;
+  }
+
+  .description {
+    padding: 20px;
+    text-align: center;
+    font-size: 25px;
+    color: #031818;
+  }
+
+  .login-signin {
+    position: ;
+  }
+
+  .buttons {
+    display: flex;
+    gap: 10px;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+  }
+
+  .login,
+  .sign-in {
+    text-decoration: none;
+    color: #000;
+    background-color: #FFD700;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+
+  .login:hover,
+  .sign-in:hover {
+    text-decoration: underline;
+  }
+
+  .copyright {
+    text-align: center;
+    font-size: 19px;
+    color: #ccc;
+    margin-top: 30px;
+  }
