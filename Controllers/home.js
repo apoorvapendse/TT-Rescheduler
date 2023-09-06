@@ -12,12 +12,7 @@ const home = (req, res) => {
 
 // to render loginpage in browser
 const loginPage = (req, res) => {
-    const url = new URL(import.meta.url);
-    const basePath = path.dirname(url.pathname);
-    const options = {
-        root: path.join(basePath, '../views')
-    };
-    res.status(200).sendFile('login.html', options)
+    res.status(200).render('login.ejs')
 }
 
 // to handle post req from login page
