@@ -11,7 +11,7 @@ const home = (req, res) => {
 }
 
 // to render loginpage in browser
-const loginPage = (req, res) => {
+const userLoginGet = (req, res) => {
     res.status(200).render('login.ejs')
 }
 
@@ -29,5 +29,13 @@ const userLoginPost = async (req, res) => {
     }
 }
 
+const adminLoginGet = (req, res) => {
+    res.status(200).render('login.ejs')
+}
 
-export {home, loginPage, userLoginPost}
+const adminLoginPost = (req, res) => {
+    // add admin auth code here
+}
+
+
+export {home, userLoginGet, userLoginPost, adminLoginGet, adminLoginPost}

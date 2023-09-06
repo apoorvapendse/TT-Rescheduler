@@ -1,12 +1,14 @@
 import express from "express";
-import { home, loginPage, userLoginPost } from "../Controllers/home.js";
+import * as controllers from "../Controllers/home.js";
 const router = express.Router();
 
-router.get("/", home);
+router.get("/", controllers.home);
 
-router.get("/login", loginPage)
+router.get("/login-prof", controllers.userLoginGet)
+router.post("/login", controllers.userLoginPost)
 
-router.post("/login", userLoginPost)
+router.get("/login-admin", controllers.adminLoginGet)
+router.post("/login-admin", controllers.adminLoginPost)
 
 
 export default router
