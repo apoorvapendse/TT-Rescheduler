@@ -2,7 +2,8 @@ import { log } from 'console';
 import mongoose from 'mongoose'
 import path from 'path'
 import bcrypt from 'bcrypt'
-import { UserModel } from '../database/database.js';
+import Professors from '../models/Faculty.js';
+import Admins from '../models/Admin.js';
 
 
 const home = (req, res) => {
@@ -17,7 +18,7 @@ const userLoginGet = (req, res) => {
 
 // to handle post req from login page
 const userLoginPost = async (req, res) => {
-    const user = await UserModel.findOne({email: req.body.email})
+    const user = await Professors.findOne({email: req.body.email})
     if(user){
         if(await bcrypt.compare(req.body.password, user.password))
             res.json("login success")
@@ -33,8 +34,17 @@ const adminLoginGet = (req, res) => {
     res.status(200).render('login.ejs')
 }
 
-const adminLoginPost = (req, res) => {
-    // add admin auth code here
+const adminLoginPost = async (req, res) => {
+    const user = await Admins.findOne({email: req.body.email})
+    if(user){
+        if(await bcrypt.compare(req.body.password, user.password))
+            res.json("login success")
+        else
+            res.json("password wrong")
+    }
+    else{
+        res.json("user does not exists")
+    }
 }
 
 
