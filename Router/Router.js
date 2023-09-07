@@ -15,5 +15,6 @@ router.get("/login-admin", auth_control.adminLoginGet);
 router.post("/login-admin", auth_control.adminLoginPost);
 
 router.get('/admin/dashboard', admin_control.adminDashGet);
+router.post('/admin/dashboard/createFaculty', admin_control.createFacultyPost);
 
 export default router;
