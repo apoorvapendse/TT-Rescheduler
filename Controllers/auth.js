@@ -64,8 +64,8 @@ const adminLoginPost = async (req, res) => {
   const admin = await Admins.findOne({ email: req.body.email });
   if (admin) {
     if (await bcrypt.compare(req.body.password, admin.password)){
-        res.json("login success");
-        res.redirect()
+        // res.json("login success");
+        res.redirect("/admin/dashboard")
     }
     else res.json("password wrong");
   } else {
