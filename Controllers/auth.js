@@ -4,6 +4,7 @@ import path from "path";
 import bcrypt from "bcrypt";
 import Professors from "../models/Faculty.js";
 import Admins from "../models/Admin.js";
+import jwt from "jsonwebtoken";
 
 const home = (req, res) => {
   console.log(req.body);
@@ -40,7 +41,13 @@ const adminSignupPost = async (req, res) => {
   console.log("admin signup post called");
   const checkAdmin = await Admins.findOne({ email: req.body.email });
   if (checkAdmin) {
-    res.status(200).redirect("/login-admin");
+    const token = jwt.sign({ id: checkAdmin.id }, process.env.JWT_PASSWD);
+    console.log("jwt token is:", token);
+    res.cookie("token", token, {
+      httpOnly: false,
+      expires: new Date(Date.now() + 30000000),
+    });
+    res.status(200).redirect("/admin/dashboard");
     return;
   }
 
@@ -55,8 +62,16 @@ const adminSignupPost = async (req, res) => {
   newAdmin
     .save()
     .then((result) => {
-      console.log("New admin created:", result);
-      res.json("Admin created Successfully");
+      //creating the jwt token and setting it as cookie
+
+      const token = jwt.sign({ id: newAdmin.id }, process.env.JWT_PASSWD);
+      console.log("jwt token for newly created admin is:", token);
+      res.cookie("token", token, {
+        httpOnly: false,
+        expires: new Date(Date.now() + 30000000),
+      });
+
+      res.redirect("/admin/dashboard");
     })
     .catch((error) => {
       console.error("Error creating admin:", error);
@@ -68,7 +83,14 @@ const adminLoginPost = async (req, res) => {
   const admin = await Admins.findOne({ email: req.body.email });
   if (admin) {
     if (await bcrypt.compare(req.body.password, admin.password)) {
-      // res.json("login success");
+      //setting or updating the cookie with jwttoken for future authorization whether the user is admin or not
+      const token = jwt.sign({ id: admin.id }, process.env.JWT_PASSWD);
+      console.log("jwt token for existing created admin is:", token);
+      res.cookie("token", token, {
+        httpOnly: false,
+        expires: new Date(Date.now() + 30000000),
+      });
+
       res.redirect("/admin/dashboard");
     } else res.json("password wrong");
   } else {
