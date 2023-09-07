@@ -3,6 +3,7 @@ import mongoose from "mongoose";
 const facultySchema = new mongoose.Schema({
   UID: String,
   name: String,
+  email: String,
   password: String,
 });
 
