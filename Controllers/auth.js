@@ -38,7 +38,11 @@ const adminLoginGet = (req, res) => {
 
 const adminSignupPost = async (req, res) => {
   console.log("admin signup post called");
-  console.log(req.body);
+  const checkAdmin = await Admins.findOne({ email: req.body.email });
+  if (checkAdmin) {
+    res.status(200).redirect("/login-admin");
+    return;
+  }
 
   const newAdmin = new Admins({
     UID: new mongoose.Types.ObjectId(),
@@ -63,11 +67,10 @@ const adminLoginPost = async (req, res) => {
   console.log("admin login post called");
   const admin = await Admins.findOne({ email: req.body.email });
   if (admin) {
-    if (await bcrypt.compare(req.body.password, admin.password)){
-        // res.json("login success");
-        res.redirect("/admin/dashboard")
-    }
-    else res.json("password wrong");
+    if (await bcrypt.compare(req.body.password, admin.password)) {
+      // res.json("login success");
+      res.redirect("/admin/dashboard");
+    } else res.json("password wrong");
   } else {
     res.json("admin does not exists");
   }
