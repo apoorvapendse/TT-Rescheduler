@@ -1,6 +1,7 @@
 import express from "express";
 import * as auth_control from "../Controllers/auth.js";
-import * as admin_control from "../Controllers/admin.js"
+import * as admin_control from "../Controllers/admin.js";
+import { checkAdmin } from "../Controllers/authMiddleware.js";
 const router = express.Router();
 
 router.get("/", auth_control.home);
@@ -14,7 +15,11 @@ router.post("/signup-admin", auth_control.adminSignupPost);
 router.get("/login-admin", auth_control.adminLoginGet);
 router.post("/login-admin", auth_control.adminLoginPost);
 
-router.get('/admin/dashboard', admin_control.adminDashGet);
-router.post('/admin/dashboard/createFaculty', admin_control.createFacultyPost);
+router.get("/admin/dashboard", admin_control.adminDashGet);
+router.post(
+  "/admin/dashboard/createFaculty",
+  checkAdmin,
+  admin_control.createFacultyPost
+);
 
 export default router;
