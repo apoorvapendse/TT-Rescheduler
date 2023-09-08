@@ -15,7 +15,7 @@ router.post("/signup-admin", auth_control.adminSignupPost);
 router.get("/login-admin", auth_control.adminLoginGet);
 router.post("/login-admin", auth_control.adminLoginPost);
 
-router.get("/admin/dashboard", admin_control.adminDashGet);
+router.get("/admin/dashboard", checkAdmin, admin_control.adminDashGet);
 router.post(
   "/admin/dashboard/createFaculty",
   checkAdmin,
