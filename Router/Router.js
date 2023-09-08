@@ -2,6 +2,8 @@ import express from "express";
 import * as auth_control from "../Controllers/auth.js";
 import * as admin_control from "../Controllers/admin.js";
 import { checkAdmin } from "../Controllers/authMiddleware.js";
+import * as prof_control from "../Controllers/faculty.js";
+
 const router = express.Router();
 
 router.get("/", auth_control.home);
@@ -21,5 +23,7 @@ router.post(
   checkAdmin,
   admin_control.createFacultyPost
 );
+
+router.get('/faculty/dashboard', prof_control.profDashGet)
 
 export default router;
