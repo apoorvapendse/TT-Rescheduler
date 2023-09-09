@@ -3,6 +3,7 @@ import * as auth_control from "../Controllers/auth.js";
 import * as admin_control from "../Controllers/admin.js";
 import { checkAdmin } from "../Controllers/authMiddleware.js";
 import * as prof_control from "../Controllers/faculty.js";
+import * as api from "../Controllers/api.js"
 
 const router = express.Router();
 
@@ -17,6 +18,8 @@ router.post("/signup-admin", auth_control.adminSignupPost);
 router.get("/login-admin", auth_control.adminLoginGet);
 router.post("/login-admin", auth_control.adminLoginPost);
 
+// should prob create different routes.js file 
+// for /admin and /faculty
 router.get("/admin/dashboard", checkAdmin, admin_control.adminDashGet);
 router.post(
   "/admin/dashboard/createFaculty",
@@ -25,5 +28,9 @@ router.post(
 );
 
 router.get('/faculty/dashboard', prof_control.profDashGet)
+
+// api to get faculty objects
+router.get("/api/get/faculty", api.getFaculty)
+
 
 export default router;
