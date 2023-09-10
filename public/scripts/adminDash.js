@@ -15,7 +15,7 @@ function displayProfData() {
     console.log(item);
     const newProfItem = document.createElement("li");
     newProfItem.style.margin = "12px auto";
-    newProfItem.innerText = `Name:${item.name}  Email:${item.email}`;
+    newProfItem.innerHTML = `<a href="dashboard/${item.id}">Name:${item.name}  Email:${item.email}</a>`;
     list.append(newProfItem);
   });
 }

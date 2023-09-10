@@ -31,4 +31,8 @@ const createFacultyPost = async (req, res) => {
   }
 };
 
-export { adminDashGet, createFacultyPost };
+const editTimetabeGet = (req, res) => {
+  res.status(200).render('faculty timetable.ejs')
+}
+
+export { adminDashGet, createFacultyPost, editTimetabeGet };

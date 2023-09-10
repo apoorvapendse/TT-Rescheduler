@@ -29,6 +29,8 @@ router.post(
 
 router.get('/faculty/dashboard', prof_control.profDashGet)
 
+router.get('/admin/dashboard/:id', admin_control.editTimetabeGet)
+
 // api to get faculty objects
 router.get("/api/get/faculty", api.getFaculty)
 
