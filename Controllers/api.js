@@ -9,10 +9,10 @@ const getFaculty = async (req, res) => {
       const safeobj = { name: name, email: email };
       return safeobj;
     });
+    res.status(200).send(safeInfo);
   } catch (error) {
     console.log(error);
   }
-  res.status(200).send(safeInfo);
 };
 
 export { getFaculty };
