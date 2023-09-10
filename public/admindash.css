@@ -1,0 +1,235 @@
+.line-design-1 {
+    position: absolute;
+    top: 50px; 
+    left: 0;
+    width: 100%;
+    height: 1px; 
+    background-color: #f48620; 
+    z-index: -1; 
+}
+
+.line-design-2 {
+    position: absolute;
+    top: 300px; 
+    left: 0;
+    width: 100%;
+    height: 1px; 
+    background-color: #f48620; 
+    z-index: -1; 
+}
+
+button {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+
+body {
+    margin: 0;
+    line-height: normal;
+    display: flex;
+    flex-direction: column; 
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: conic-gradient(
+        from 169.92deg at 50% 50%,
+        #0f0d0d 0deg,
+        rgba(15, 13, 13, 0.94) 279.28deg,
+        rgba(15, 13, 13, 0) 359.85deg
+    );
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #0f0d0d; 
+    padding: 10px 20px;
+    color: #fff;
+    position: fixed;
+    top: 0;
+    width: 100%; 
+}
+
+
+#home,
+#about,
+#timetable-rescheduler {
+    font-weight: 700;
+    top: -10px;
+    position: fixed;
+    color: #fff;
+    cursor: pointer;
+}
+.line-design {
+    width: 100%;
+    height: 5px; 
+    background-color: #f48620; 
+    margin-top: 15px; 
+}
+
+#home,
+#about {
+    color: var(--color-darkorange); 
+}
+
+
+button:nth-child(1) {
+    background-color: #f48620; 
+    color: #fff;
+    padding: 10px 20px;
+    margin-right: 10px;
+}
+
+button:nth-child(2) {
+    background-color: #f48620; 
+    color: #fff;
+    padding: 10px 20px;
+}
+
+
+h2 {
+    font-size: 24px;
+    margin-top: 20px;
+    color: var(--color-darkorange); 
+    color: #f48620;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #0f0d0d; 
+    padding: 10px 20px;
+    color: #fff;
+    position: fixed;
+    top: 0;
+    width: 100%; 
+}
+form {
+    margin-top: 10px;
+}
+
+#add-prof,
+#remove-prof {
+    background-color: #f48620; 
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 10px; 
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+#add-prof {
+    left: 20px; 
+}
+
+#remove-prof {
+    left: 150px; 
+}
+
+#add-prof:hover,
+#remove-prof:hover {
+    background-color: #fff; 
+    color: #f48620; 
+    transform: scale(1.1);
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
+}
+
+
+#home,
+#about {
+    background-color: #f48620; 
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    position: absolute;
+    top:7px;
+}
+
+#home {
+    left: 10px;
+}
+
+#about {
+    left: 100px; 
+}
+
+#add-prof,
+#remove-prof {
+    background-color: #f48620; 
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    position: absolute;
+    top: 180px; 
+}
+
+#add-prof {
+    left: 770px;
+}
+
+#remove-prof {
+    left: 630px; 
+}
+
+#home:hover,
+#about:hover,
+#add-prof:hover,
+#remove-prof:hover {
+    background-color: #fff; 
+    color: #f48620; 
+    transform: scale(1.1);
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff; 
+    color: var(--color-darkorange); 
+}
+
+button[type="submit"] {
+    background-color: #f48620; 
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.profList {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+
+#home:hover,
+#about:hover,
+#timetable-rescheduler:hover,
+.request-slot:hover {
+    background-color: #fff; 
+    color: #f48620; 
+    transform: scale(1.1);
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
+}
