@@ -32,6 +32,7 @@ const createFacultyPost = async (req, res) => {
 };
 
 const editTimetabeGet = (req, res) => {
+  // add the logic to fetch tt if present and check for conflicts
   res.status(200).render('faculty timetable.ejs')
 }
 
