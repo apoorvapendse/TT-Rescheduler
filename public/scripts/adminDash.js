@@ -20,6 +20,8 @@ function displayProfData() {
   });
 }
 
-getAllProfs().then(() => {
-  displayProfData();
-});
+getAllProfs()
+  .then(() => {
+    displayProfData();
+  })
+  .catch(err => console.log(err));
