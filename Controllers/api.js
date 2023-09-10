@@ -1,8 +1,15 @@
-import Professors from '../models/Faculty.js'
+import Professors from "../models/Faculty.js";
 
 const getFaculty = async (req, res) => {
-  const facultyList = await Professors.find({})
-  res.status(200).send(facultyList)
-}
+  const facultyList = await Professors.find({});
 
-export { getFaculty }
+  const safeInfo = facultyList.map((item) => {
+    let { name, email } = item;
+    const safeobj = { name: name, email: email };
+    return safeobj;
+  });
+
+  res.status(200).send(safeInfo);
+};
+
+export { getFaculty };

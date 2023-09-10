@@ -22,7 +22,7 @@ const createFacultyPost = async (req, res) => {
       .save()
       .then((result) => {
         console.log("prof created:", result);
-        res.json("prof created");
+        res.redirect("/admin/dashboard");
       })
       .catch((err) => {
         console.log(err);
