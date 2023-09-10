@@ -1,10 +1,14 @@
 import mongoose from "mongoose";
+import timeTables from "./TimeTable.js";
+import { LectureSchema, timeTableSchema } from "./schema.js";
+
 
 const facultySchema = new mongoose.Schema({
   UID: String,
   name: String,
   email: String,
   password: String,
+  tt: timeTableSchema
 });
 
 const Professors = mongoose.model("Professors", facultySchema);

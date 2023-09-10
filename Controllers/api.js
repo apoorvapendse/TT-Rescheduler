@@ -5,8 +5,9 @@ const getFaculty = async (req, res) => {
     const facultyList = await Professors.find({});
 
     const safeInfo = facultyList.map((item) => {
-      let { name, email } = item;
-      const safeobj = { name: name, email: email };
+      let { name, email, _id } = item;
+      // const safeobj = { name: name, email: email };
+      const safeobj = { id: _id, name: name, email: email };
       return safeobj;
     });
     res.status(200).send(safeInfo);

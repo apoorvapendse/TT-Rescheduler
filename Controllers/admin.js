@@ -22,7 +22,7 @@ const createFacultyPost = async (req, res) => {
       .save()
       .then((result) => {
         console.log("prof created:", result);
-        res.redirect("/admin/dashboard");
+        res.redirect(`/admin/dashboard/${result.UID}`);
       })
       .catch((err) => {
         console.log(err);
@@ -31,4 +31,9 @@ const createFacultyPost = async (req, res) => {
   }
 };
 
-export { adminDashGet, createFacultyPost };
+const editTimetabeGet = (req, res) => {
+  // add the logic to fetch tt if present and check for conflicts
+  res.status(200).render('faculty timetable.ejs')
+}
+
+export { adminDashGet, createFacultyPost, editTimetabeGet };
