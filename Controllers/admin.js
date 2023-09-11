@@ -32,8 +32,18 @@ const createFacultyPost = async (req, res) => {
 };
 
 const editTimetabeGet = (req, res) => {
-  // add the logic to fetch tt if present and check for conflicts
   res.status(200).render('faculty timetable.ejs')
 }
 
-export { adminDashGet, createFacultyPost, editTimetabeGet };
+const saveTimetablePost = (req, res) => {
+  // add the logic to fetch tt if present and check for conflicts
+  console.log(req);
+  res.status(200).send('all good')
+}
+
+export { 
+  adminDashGet, 
+  createFacultyPost, 
+  editTimetabeGet, 
+  saveTimetablePost 
+};
