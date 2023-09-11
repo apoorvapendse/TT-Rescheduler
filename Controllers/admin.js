@@ -35,9 +35,10 @@ const editTimetabeGet = (req, res) => {
   res.status(200).render('faculty timetable.ejs')
 }
 
-const saveTimetablePost = (req, res) => {
+const saveTimetablePost = async (req, res) => {
   // add the logic to fetch tt if present and check for conflicts
-  console.log(req);
+  const prof = await Professors.findOne({ UID: req.params.id})
+  console.log(prof)     // logging null
   res.status(200).send('all good')
 }
 
