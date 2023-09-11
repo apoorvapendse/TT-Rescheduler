@@ -131,8 +131,12 @@
           method: "POST",
           body: JSON.stringify({ formData, profID })
         })
-        .then(function (res) { console.log(res) })
-        .catch(function (res) { console.log(res) })
+        .then(function (res) {
+          alert(
+            "timetable updated successfully"
+          )
+        })
+        .catch(function (res) { alert("failed to upload") })
     })
 
 
