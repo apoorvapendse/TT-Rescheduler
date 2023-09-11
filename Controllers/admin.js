@@ -32,19 +32,16 @@ const createFacultyPost = async (req, res) => {
 };
 
 const editTimetabeGet = (req, res) => {
-  res.status(200).render('faculty timetable.ejs')
-}
+  res.status(200).render("faculty timetable.ejs");
+};
 
 const saveTimetablePost = async (req, res) => {
   // add the logic to fetch tt if present and check for conflicts
-  const prof = await Professors.findOne({ UID: req.params.id})
-  console.log(prof)     // logging null
-  res.status(200).send('all good')
-}
-
-export { 
-  adminDashGet, 
-  createFacultyPost, 
-  editTimetabeGet, 
-  saveTimetablePost 
+  console.log(req.body);
+  console.log(req.params.id);
+  const prof = await Professors.findOne({ UID: req.params.id });
+  console.log(prof); // logging null
+  res.status(200).json("all good");
 };
+
+export { adminDashGet, createFacultyPost, editTimetabeGet, saveTimetablePost };
