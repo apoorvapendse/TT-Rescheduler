@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Create Account</title>
-    <!-- Link to the external styles.css file -->
-    <link rel="stylesheet" href="styles(sign).css">
+
+    <link rel="stylesheet" href="/sign.css">
 </head>
 
 <body>
@@ -14,18 +14,15 @@
         <div class="background-section"></div>
         <div class="content-section">
             <div class="form">
-                <h2>Create Account</h2>
-                <form action="#" method="post">
+                <h2>Create Admin Account </h2>
+                <form action="/signup-admin" method="post">
                     <div class="form-group two-fields">
                         <div class="two-fields">
                             <div class="form-group">
-                                <label for="first-name">First Name:</label>
-                                <input type="text" id="first-name" name="first-name" placeholder="First Name" required>
+                                <label for="first-name">Name:</label>
+                                <input type="text" id="first-name" name="name" placeholder="Name" required>
                             </div>
-                            <div class="form-group">
-                                <label for="last-name">Last Name:</label>
-                                <input type="text" id="last-name" name="last-name" placeholder="Last Name" required>
-                            </div>
+
                         </div>
                     </div>
                     <div class="form-group">
@@ -39,7 +36,7 @@
                     <button type="submit">Create Account</button>
                 </form>
                 <div class="options">
-                    <a href="#">Already have an account?<a href="./login.html" class="login">Login</a>
+                    <a href="/login-admin">Already have an account? Login</a>
                 </div>
                 <div class="social-buttons">
                     <div class="social-button">
@@ -48,8 +45,7 @@
                         Sign Up with Google
                     </div>
                     <div class="social-button">
-                        <img
-                            src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/2021_Facebook_icon.svg/1024px-2021_Facebook_icon.svg.png"
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/2021_Facebook_icon.svg/1024px-2021_Facebook_icon.svg.png"
                             alt="Facebook Icon">
                         Sign Up with Facebook
                     </div>
