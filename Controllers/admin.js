@@ -38,6 +38,7 @@ const editTimetabeGet = (req, res) => {
 const saveTimetablePost = async (req, res) => {
   // add the logic to fetch tt if present and check for conflicts
   console.log(req.body);
+  console.log(req);
   console.log(req.params.id);
   const prof = await Professors.findOne({ UID: req.params.id });
   console.log(prof); // logging null
