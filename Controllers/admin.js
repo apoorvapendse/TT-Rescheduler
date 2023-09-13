@@ -37,11 +37,19 @@ const editTimetabeGet = (req, res) => {
 
 const saveTimetablePost = async (req, res) => {
   // add the logic to fetch tt if present and check for conflicts
-  console.log(req.body);
-  console.log(req);
-  console.log(req.params.id);
-  const prof = await Professors.findOne({ UID: req.params.id });
+  const prof = await Professors.findOne({ _id: req.params.id });
   console.log(prof); // logging null
+  if (prof) {
+    let i = 0;
+    //mondays will occur on i =0,5,10,15,20,25
+    for (const key in req.body.formData) {
+      const day = key.substring(0, 3);
+      const time = +key.substring(3, 5);
+      const roomNo = +req.body.formData[key];
+
+      console.log(day);
+    }
+  }
   res.status(200).json("all good");
 };
 
