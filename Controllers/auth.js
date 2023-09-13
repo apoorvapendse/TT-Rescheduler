@@ -22,12 +22,24 @@ const profLoginPost = async (req, res) => {
 
   const prof = await Professors.findOne({ email: req.body.email });
   if (prof) {
-    if (await bcrypt.compare(req.body.password, prof.password))
-      res.json("login success");
-    else res.json("password wrong");
+    if (await bcrypt.compare(req.body.password, prof.password)) {
+      //setting or updating the cookie with jwt proftoken for future authorization whether the user is prof or not
+      const proftoken = jwt.sign({ id: prof.id }, process.env.JWT_PASSWD);
+      console.log("jwt proftoken for existing prof is:", proftoken);
+      res.cookie("proftoken", proftoken, {
+        httpOnly: false,
+        expires: new Date(Date.now() + 30000000),
+      });
+
+      res.redirect("/prof/dashboard");
+    } else res.json("password wrong");
   } else {
-    res.json("Professor does not exist in the database, ask admin to add");
+    res.json("professor not added to database");
   }
+};
+
+const profDashBoardGet = async (req, res) => {
+  res.status(200).render("prof_dashboard.ejs");
 };
 
 const adminSignupGet = (req, res) => {
@@ -41,9 +53,9 @@ const adminSignupPost = async (req, res) => {
   console.log("admin signup post called");
   const checkAdmin = await Admins.findOne({ email: req.body.email });
   if (checkAdmin) {
-    const token = jwt.sign({ id: checkAdmin.id }, process.env.JWT_PASSWD);
-    console.log("jwt token is:", token);
-    res.cookie("token", token, {
+    const admintoken = jwt.sign({ id: checkAdmin.id }, process.env.JWT_PASSWD);
+    console.log("jwt admintoken is:", admintoken);
+    res.cookie("admintoken", admintoken, {
       httpOnly: false,
       expires: new Date(Date.now() + 30000000),
     });
@@ -62,11 +74,11 @@ const adminSignupPost = async (req, res) => {
   newAdmin
     .save()
     .then((result) => {
-      //creating the jwt token and setting it as cookie
+      //creating the jwt admintoken and setting it as cookie
 
-      const token = jwt.sign({ id: newAdmin.id }, process.env.JWT_PASSWD);
-      console.log("jwt token for newly created admin is:", token);
-      res.cookie("token", token, {
+      const admintoken = jwt.sign({ id: newAdmin.id }, process.env.JWT_PASSWD);
+      console.log("jwt admintoken for newly created admin is:", admintoken);
+      res.cookie("admintoken", admintoken, {
         httpOnly: false,
         expires: new Date(Date.now() + 30000000),
       });
@@ -83,10 +95,10 @@ const adminLoginPost = async (req, res) => {
   const admin = await Admins.findOne({ email: req.body.email });
   if (admin) {
     if (await bcrypt.compare(req.body.password, admin.password)) {
-      //setting or updating the cookie with jwttoken for future authorization whether the user is admin or not
-      const token = jwt.sign({ id: admin.id }, process.env.JWT_PASSWD);
-      console.log("jwt token for existing created admin is:", token);
-      res.cookie("token", token, {
+      //setting or updating the cookie with jwtadmintoken for future authorization whether the user is admin or not
+      const admintoken = jwt.sign({ id: admin.id }, process.env.JWT_PASSWD);
+      console.log("jwt admintoken for existing created admin is:", admintoken);
+      res.cookie("admintoken", admintoken, {
         httpOnly: false,
         expires: new Date(Date.now() + 30000000),
       });
@@ -106,4 +118,5 @@ export {
   adminLoginPost,
   adminSignupGet,
   adminSignupPost,
+  profDashBoardGet,
 };
