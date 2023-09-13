@@ -1,0 +1,104 @@
+header {
+    background-color: #f48620;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+}
+
+header:hover {
+    background-color: #ff8c00;
+}
+
+h1 {
+    margin: 40px 0 10px 0;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+h1:hover {
+    color: #ff8c00;
+}
+
+button {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+body {
+    margin: 0;
+    line-height: normal;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: conic-gradient(
+        from 169.92deg at 50% 50%,
+        #0f0d0d 0deg,
+        rgba(15, 13, 13, 0.94) 279.28deg,
+        rgba(15, 13, 13, 0) 359.85deg
+    );
+    font-size: var(--font-size-mini);
+    color: var(--color-white);
+    font-family: var(--font-inter);
+}
+
+form {
+    margin-top: 20px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th,
+td {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: center;
+    color: var(--color-darkorange);
+}
+
+th {
+    background-color: #f48620;
+    color: #fff;
+}
+
+.time {
+    color: #fff;
+}
+
+input[type="number"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff;
+    color: var(--color-darkorange);
+}
+
+button[type="submit"] {
+    background-color: #f48620;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button[type="submit"]:hover {
+    background-color: #fff;
+    color: #f48620;
+    transform: scale(1.1);
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
+}
+
+
+
+  
