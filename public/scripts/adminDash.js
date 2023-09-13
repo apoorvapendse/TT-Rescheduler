@@ -16,6 +16,11 @@ function displayProfData() {
     const newProfItem = document.createElement("li");
     newProfItem.style.margin = "12px auto";
     newProfItem.innerHTML = `<a href="dashboard/${item.id}">Name:${item.name}  Email:${item.email}</a>`;
+
+    newProfItem.addEventListener("click", async () => {
+      console.log("clicked");
+      await localStorage.setItem("profID", item.id);
+    });
     list.append(newProfItem);
   });
 }
@@ -24,4 +29,4 @@ getAllProfs()
   .then(() => {
     displayProfData();
   })
-  .catch(err => console.log(err));
+  .catch((err) => console.log(err));
