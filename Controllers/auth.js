@@ -92,12 +92,13 @@ const adminSignupPost = async (req, res) => {
 
 const adminLoginPost = async (req, res) => {
   console.log("admin login post called");
+
   const admin = await Admins.findOne({ email: req.body.email });
   if (admin) {
     if (await bcrypt.compare(req.body.password, admin.password)) {
       //setting or updating the cookie with jwtadmintoken for future authorization whether the user is admin or not
       const admintoken = jwt.sign({ id: admin.id }, process.env.JWT_PASSWD);
-      console.log("jwt admintoken for existing created admin is:", admintoken);
+      console.log("jwt admintoken for existing  admin is:", admintoken);
       res.cookie("admintoken", admintoken, {
         httpOnly: false,
         expires: new Date(Date.now() + 30000000),
