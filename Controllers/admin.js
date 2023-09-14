@@ -38,7 +38,7 @@ const editTimetabeGet = (req, res) => {
 const saveTimetablePost = async (req, res) => {
   // add the logic to fetch tt if present and check for conflicts
   const prof = await Professors.findOne({ _id: req.params.id });
-  console.log(prof);
+  console.table(prof);
   if (prof) {
     let i = 0;
     //mondays will occur on i =0,5,10,15,20,25
