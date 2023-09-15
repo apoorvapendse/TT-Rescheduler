@@ -58,22 +58,30 @@ const saveTimetablePost = async (req, res) => {
           parsed[i].push({time:lec['time'], roomID:lec['roomID']})
       }
     })
+    const dataObj = {
+      Day1: parsed[0],
+      Day2: parsed[1],
+      Day3: parsed[2],
+      Day4: parsed[3],
+      Day5: parsed[4],
+    }
 
     // adding it to timetable model
     let tt = await timeTables.findOne({_id:prof.tt})
     if(tt){
       // timetable exists hence fetch data from it
       console.log('timetable exists');
+
+      // const updateResult = await .updateOne({_id: prof.tt}, dataObj)
+      const updateResult = await db('TimeTables').updateOne({_id: prof.tt}, dataObj)
+      if (updateResult.nModified === 1) {
+        console.log('Document updated successfully.');
+      } else {
+        console.log('No document was modified.');
+      }
     }
     else{
-      console.log(parsed[4]);
-      tt = new timeTables({
-        Day1: parsed[0],
-        Day2: parsed[1],
-        Day3: parsed[2],
-        Day4: parsed[3],
-        Day5: parsed[4],
-      })
+      tt = new timeTables(dataObj)
       tt.save()
         .then(() => console.log('timetable saved successfully'))
         .catch((err) => console.log("tt not saved"))
@@ -84,7 +92,7 @@ const saveTimetablePost = async (req, res) => {
     prof.save()
       .then(() => console.log('saved to prof'))
       .catch((err) => console.log(err))
-    console.log(prof)
+    console.log(prof.name)
     // everything working as expected till here
     // apoorva take a look here
     // Professors.findOne({ _id: req.params.id })

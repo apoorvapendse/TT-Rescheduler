@@ -21,8 +21,13 @@ const getTT = async (req, res) => {
   try{
     const prof = await Professors.findOne({_id: req.params.facultyId})
     const tt = await timeTables.findOne({_id: prof.tt})
-    console.log(tt);
-    res.status(200).json({tt: [tt.Day1, tt.Day2, tt.Day3, tt.Day4, tt.Day5]})
+    const array = []
+    array.push(...tt.Day1)
+    array.push(...tt.Day2)
+    array.push(...tt.Day3)
+    array.push(...tt.Day4)
+    array.push(...tt.Day5)
+    res.status(200).json(array)
   }catch(err){
     console.log(err);
     res.status(404).json({})
