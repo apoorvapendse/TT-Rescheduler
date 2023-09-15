@@ -38,7 +38,7 @@ const editTimetabeGet = (req, res) => {
 };
 
 const saveTimetablePost = async (req, res) => {
-  const prof = await Professors.findOne({ _id: req.params.id });
+  const prof = await Professors.findOne({ _id: req.params.id })
   if (prof) {
     // getting timetable data
     const data = []
@@ -61,12 +61,12 @@ const saveTimetablePost = async (req, res) => {
 
     // adding it to timetable model
     let tt = await timeTables.findOne({_id:prof.tt})
-    console.log(tt)
     if(tt){
       // timetable exists hence fetch data from it
       console.log('timetable exists');
     }
     else{
+      console.log(parsed[4]);
       tt = new timeTables({
         Day1: parsed[0],
         Day2: parsed[1],
@@ -83,14 +83,16 @@ const saveTimetablePost = async (req, res) => {
     prof.tt = tt._id
     prof.save()
       .then(() => console.log('saved to prof'))
-      .catch(() => console.log(err))
+      .catch((err) => console.log(err))
     console.log(prof)
     // everything working as expected till here
     // apoorva take a look here
-    prof.populate('tt')
-      .then(() => console.log('done'))
-      .catch((err) => console.log(err))
+    // Professors.findOne({ _id: req.params.id })
+    //   .populate('tt')
+    //   .then(() => console.log('done'))
+    //   .catch((err) => console.log(err))
   }
+
   res.status(200).json("all good");
 };
 

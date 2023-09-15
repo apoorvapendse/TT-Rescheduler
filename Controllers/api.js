@@ -1,4 +1,5 @@
 import Professors from "../models/Faculty.js";
+import timeTables from "../models/TimeTable.js";
 
 const getFaculty = async (req, res) => {
   try {
@@ -16,4 +17,16 @@ const getFaculty = async (req, res) => {
   }
 };
 
-export { getFaculty };
+const getTT = async (req, res) => {
+  try{
+    const prof = await Professors.findOne({_id: req.params.facultyId})
+    const tt = await timeTables.findOne({_id: prof.tt})
+    console.log(tt);
+    res.status(200).json({tt: [tt.Day1, tt.Day2, tt.Day3, tt.Day4, tt.Day5]})
+  }catch(err){
+    console.log(err);
+    res.status(404).json({})
+  }
+}
+
+export { getFaculty, getTT };
