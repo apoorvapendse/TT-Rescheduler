@@ -21,12 +21,14 @@ const getTT = async (req, res) => {
   try{
     const prof = await Professors.findOne({_id: req.params.facultyId})
     const tt = await timeTables.findOne({_id: prof.tt})
+    // the array needs to be sorted by time not day
     const array = []
-    array.push(...tt.Day1)
-    array.push(...tt.Day2)
-    array.push(...tt.Day3)
-    array.push(...tt.Day4)
-    array.push(...tt.Day5)
+    const days = ['Day1', 'Day2', 'Day3', 'Day4', 'Day5'];
+    for(let i = 0; i < 10; i++){
+      days.forEach(day => {
+        array.push(tt[day][i])
+      })
+    }
     res.status(200).json(array)
   }catch(err){
     console.log(err);

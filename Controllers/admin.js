@@ -72,8 +72,7 @@ const saveTimetablePost = async (req, res) => {
       // timetable exists hence fetch data from it
       console.log('timetable exists');
 
-      // const updateResult = await .updateOne({_id: prof.tt}, dataObj)
-      const updateResult = await db('TimeTables').updateOne({_id: prof.tt}, dataObj)
+      const updateResult = await timeTables.updateOne({_id: prof.tt}, dataObj)
       if (updateResult.nModified === 1) {
         console.log('Document updated successfully.');
       } else {
