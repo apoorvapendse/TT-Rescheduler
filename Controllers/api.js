@@ -31,8 +31,7 @@ const getTT = async (req, res) => {
     }
     res.status(200).json(array)
   }catch(err){
-    console.log(err);
-    res.status(404).json({})
+    res.status(404).json({'success': false })
   }
 }
 

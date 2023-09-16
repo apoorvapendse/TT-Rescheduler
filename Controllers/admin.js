@@ -24,7 +24,7 @@ const createFacultyPost = async (req, res) => {
       .save()
       .then((result) => {
         console.log("prof created:", result);
-        res.redirect(`/admin/dashboard/${result.UID}`);
+        res.redirect(`/admin/dashboard/${result._id}`);
       })
       .catch((err) => {
         console.log(err);
@@ -38,7 +38,9 @@ const editTimetabeGet = (req, res) => {
 };
 
 const saveTimetablePost = async (req, res) => {
+  console.log('save timetable called');
   const prof = await Professors.findOne({ _id: req.params.id })
+  console.log(prof);
   if (prof) {
     // getting timetable data
     const data = []
