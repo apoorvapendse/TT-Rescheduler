@@ -1,7 +1,6 @@
 import mongoose from "mongoose";
 
 const LectureSchema = new mongoose.Schema({
-  slotID: Number,
   roomID: Number,
   time: Number,
 });

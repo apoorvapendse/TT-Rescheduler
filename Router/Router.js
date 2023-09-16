@@ -36,4 +36,7 @@ router.post("/admin/dashboard/:id", admin_control.saveTimetablePost);
 // api to get faculty objects
 router.get("/api/get/faculty", checkAdmin,api.getFaculty);
 
+// api to get timetable
+router.get("/api/get/:facultyId", api.getTT)
+
 export default router;

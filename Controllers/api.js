@@ -1,4 +1,5 @@
 import Professors from "../models/Faculty.js";
+import timeTables from "../models/TimeTable.js";
 
 const getFaculty = async (req, res) => {
   try {
@@ -16,4 +17,22 @@ const getFaculty = async (req, res) => {
   }
 };
 
-export { getFaculty };
+const getTT = async (req, res) => {
+  try{
+    const prof = await Professors.findOne({_id: req.params.facultyId})
+    const tt = await timeTables.findOne({_id: prof.tt})
+    // the array needs to be sorted by time not day
+    const array = []
+    const days = ['Day1', 'Day2', 'Day3', 'Day4', 'Day5'];
+    for(let i = 0; i < 10; i++){
+      days.forEach(day => {
+        array.push(tt[day][i])
+      })
+    }
+    res.status(200).json(array)
+  }catch(err){
+    res.status(404).json({'success': false })
+  }
+}
+
+export { getFaculty, getTT };
