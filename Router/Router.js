@@ -1,10 +1,10 @@
 import express from "express";
 import * as auth_control from "../Controllers/auth.js";
 import * as admin_control from "../Controllers/admin.js";
-import { checkAdmin } from "../Controllers/authMiddleware.js";
+import { checkAdmin, checkProf } from "../Controllers/authMiddleware.js";
 import * as prof_control from "../Controllers/faculty.js";
 import * as api from "../Controllers/api.js";
-import { requestSlot } from "../Controllers/slot.js";
+import { getRequestSlot, postRequestSlot } from "../Controllers/slot.js";
 
 const router = express.Router();
 
@@ -40,6 +40,7 @@ router.get("/api/get/faculty", checkAdmin, api.getFaculty);
 // api to get timetable
 router.get("/api/get/:facultyId", api.getTT);
 
-router.get("/faculty/request-slot", requestSlot);
+router.get("/faculty/request-slot", checkProf, getRequestSlot);
+router.post("/faculty/request-slot", checkProf, postRequestSlot);
 
 export default router;

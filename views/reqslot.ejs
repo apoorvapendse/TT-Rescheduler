@@ -8,6 +8,26 @@
 </head>
 
 <body>
+    <h1>request slot</h1>
+
+    <form action="/faculty/request-slot" method="post"
+        style="display: flex;height: 100%;width: 100%;justify-content: center;flex-direction: column;align-items: center;">
+
+        <input type="number" placeholder="Enter time" name="time">
+        <br>
+
+        <select name="day">
+            <option value="monday">Monday</option>
+            <option value="tuesday">Tuesday</option>
+            <option value="wednesday">Wednesday</option>
+            <option value="thursday">Thursday</option>
+            <option value="friday">Friday</option>
+        </select>
+
+        <br>
+        <button type="submit">Submit</button>
+
+    </form>
 
 </body>
 

@@ -14,10 +14,4 @@ document.addEventListener("DOMContentLoaded", function () {
       requestSlot.style.color = "#f7af7b"; // Reset the text color
     });
   
-    // Add a click event
-    requestSlot.addEventListener("click", function () {
-      // You can add the code to perform an action when the "Request Slot" is clicked here
-      // For example, you can open a modal or navigate to another page.
-      alert("Request Slot clicked!"); // Display an alert for demonstration purposes
-    });
-  });
+   
