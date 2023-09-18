@@ -25,7 +25,7 @@ const createFacultyPost = async (req, res) => {
       .save()
       .then((result) => {
         console.log("prof created:", result);
-        res.redirect(`/admin/dashboard/${result._id}`);
+        res.redirect(`/admin/dashboard/`);
       })
       .catch((err) => {
         console.log(err);

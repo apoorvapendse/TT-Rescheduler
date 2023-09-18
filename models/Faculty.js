@@ -5,12 +5,15 @@ import { LectureSchema, timeTableSchema } from "./schema.js";
 const sentReqSchema = new mongoose.Schema({
   time: Number,
   day: String,
+  roomID: Number,
   approved: Boolean,
 });
 
 const receivedReqSchema = new mongoose.Schema({
   time: Number,
+
   day: String,
+  roomID: Number,
   approved: Boolean,
 });
 
