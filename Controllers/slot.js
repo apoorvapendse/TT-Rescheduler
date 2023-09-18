@@ -21,6 +21,7 @@ async function postRequestSlot(req, res) {
 
     senderProf.save();
     res.send("<h1>Request sent successfully</h1>");
+    return
   }
   res.json("something went wrong");
 }
