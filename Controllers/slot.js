@@ -68,8 +68,21 @@ async function postRequestSlot(req, res) {
 
     // Perform the query
     const profTT = await timeTables.findOne(query);
-    console.log(profTT.associateProfID);
-    res.send("<h1>Request sent successfully</h1>");
+    if (profTT) {
+      const receiverProf = await Professors.findById(profTT.associateProfID);
+      console.log(receiverProf);
+      receiverProf.receivedRequests.push({
+        roomID: req.body.roomID,
+        time: req.body.time,
+        day: req.body.day,
+        approved: false,
+      });
+      receiverProf.save();
+      res.send("<h1>Request sent successfully</h1>");
+    } else {
+      res.send("<h1>No slot found");
+    }
+
     return;
   }
   res.json("something went wrong");

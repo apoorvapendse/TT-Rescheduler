@@ -23,7 +23,7 @@ const facultySchema = new mongoose.Schema({
   email: String,
   password: String,
   sentRequests: [sentReqSchema],
-  receivedReqSchema: [receivedReqSchema],
+  receivedRequests: [receivedReqSchema],
   tt: { type: Schema.Types.ObjectId, ref: "TimeTables" },
 });
 
