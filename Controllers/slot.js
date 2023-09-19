@@ -80,7 +80,7 @@ async function postRequestSlot(req, res) {
       receiverProf.save();
       res.send("<h1>Request sent successfully</h1>");
     } else {
-      res.send("<h1>No slot found");
+      res.send("<h1>No slot found</h1>");
     }
 
     return;
