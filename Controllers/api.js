@@ -35,4 +35,13 @@ const getTT = async (req, res) => {
   }
 }
 
-export { getFaculty, getTT };
+const getFacultyById = async (req, res) => {
+  try{
+    const prof = await Professors.findOne({_id: req.params.id})
+    res.status(200).json(prof)
+  }catch(err){
+    res.status(404).json({'success': false })
+  }
+}
+
+export { getFaculty, getTT, getFacultyById };
