@@ -22,7 +22,7 @@ router.post("/login-admin", auth_control.adminLoginPost);
 // should prob create different routes.js file
 // for /admin and /faculty
 router.get("/admin/dashboard", checkAdmin, admin_control.adminDashGet);
-router.get("/prof/dashboard", auth_control.profDashBoardGet);
+router.get("/prof/dashboard", prof_control.profDashGet);
 router.post(
   "/admin/dashboard/createFaculty",
   checkAdmin,
@@ -39,6 +39,9 @@ router.get("/api/get/faculty", checkAdmin, api.getFaculty);
 
 // api to get timetable
 router.get("/api/get/:facultyId", api.getTT);
+
+// api to get faculty object
+router.get("/api/get/faculty/:id", api.getFacultyById);
 
 router.get("/faculty/request-slot", checkProf, getRequestSlot);
 router.post("/faculty/request-slot", checkProf, postRequestSlot);
