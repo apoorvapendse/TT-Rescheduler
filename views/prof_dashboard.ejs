@@ -28,11 +28,6 @@
         Dropdown
       </button>
       <ul id="req-list" class="dropdown-menu">
-        <li>
-          req for slot --
-          <button class="dropdown-item" type="button">Accept</button>
-          <button class="dropdown-item" type="button">Deny</button>
-        </li>
 
       </ul>
     </div>
@@ -72,19 +67,29 @@
   <script>
     const profID = localStorage.getItem("profID")
     console.log(profID)
-
+    reqList = document.getElementById('req-list')
+    
     const getData = async () => {
-      let i = 0
-      
-      try{
+      try {
         let data = await fetch(`/api/get/faculty/${profID}`)
         data = await data.json()
         console.log(data);
-      }catch(err){
+        data.receivedRequests.forEach((req) => {
+          const li = document.createElement('li')
+          li.innerHTML = `<li>
+              ${req.time}
+              <button class="dropdown-item" type="button">Accept</button>
+              <button class="dropdown-item" type="button">Deny</button>
+            </li>`
+          reqList.appendChild(li);
+        })
+      } catch (err) {
         console.log('tt doesnt exist add new');
       }
     }
     getData()
+
+
   </script>
 </body>
 
