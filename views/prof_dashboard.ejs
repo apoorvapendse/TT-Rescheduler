@@ -68,7 +68,7 @@
     const profID = localStorage.getItem("profID")
     console.log(profID)
     reqList = document.getElementById('req-list')
-    
+
     const getData = async () => {
       try {
         let data = await fetch(`/api/get/faculty/${profID}`)
@@ -76,15 +76,29 @@
         console.log(data);
         data.receivedRequests.forEach((req) => {
           const li = document.createElement('li')
-          li.innerHTML = `<li>
-              ${req.time}
-              <button class="dropdown-item" type="button">Accept</button>
-              <button class="dropdown-item" type="button">Deny</button>
-            </li>`
+          li.innerHTML = `${req.time}
+              <button class="btn btn-primary accept" name='${req._id}' type="button">Accept</button>
+              <button class="btn btn-danger" type="button">Deny</button>`
           reqList.appendChild(li);
         })
+        
+        const acceptBtn = document.querySelectorAll('.accept')
+        console.log(acceptBtn)
+        acceptBtn.forEach(btn => {
+          btn.addEventListener('click', () => {
+            fetch('/prof/dashboard', {
+              method: 'POST',
+              body: JSON.stringify({
+                id: btn.name
+              }),
+              headers: {
+                "Content-type": "application/json; charset=UTF-8"
+              }
+            })
+          })
+        })
       } catch (err) {
-        console.log('tt doesnt exist add new');
+        console.log('tt doesnt exist add new', err);
       }
     }
     getData()

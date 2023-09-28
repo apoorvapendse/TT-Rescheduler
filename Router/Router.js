@@ -23,6 +23,7 @@ router.post("/login-admin", auth_control.adminLoginPost);
 // for /admin and /faculty
 router.get("/admin/dashboard", checkAdmin, admin_control.adminDashGet);
 router.get("/prof/dashboard", prof_control.profDashGet);
+router.post("/prof/dashboard", prof_control.profDashPost);
 router.post(
   "/admin/dashboard/createFaculty",
   checkAdmin,
