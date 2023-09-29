@@ -4,7 +4,7 @@ const profDashGet = (req, res) => {
 
 const profDashPost = (req, res) => {
   console.log(req.body);
-  res.send("bimbimbambam");
+  res.status(200).json("bimbimbambam");
 };
 
 export { profDashGet, profDashPost };
