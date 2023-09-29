@@ -1,19 +1,21 @@
 import jwtDecode from "jwt-decode";
-
+import Professors from "../models/Faculty.js";
 
 const profDashGet = (req, res) => {
   res.status(200).render("prof_dashboard.ejs");
 };
 
-const profDashPost = (req, res) => {
+const profDashPost = async (req, res) => {
   console.log(req.body);
-  try{
-    const proftoken = jwtDecode(req.cookies.proftoken)
-    
-  }catch(err){console.log(err);}
-  if(proftoken){
-    console.log(proftoken);
+  const profID = jwtDecode(req.cookies.proftoken).id;
+  console.log(profID);
 
+  try{
+    const prof = await Professors.findOne({_id: profID})
+    prof.receivedRequests[req.body.index].approved = true
+    prof.save();
+  }catch(err){
+    console.log(err)
   }
 
   res.status(200).json("bimbimbambam");
