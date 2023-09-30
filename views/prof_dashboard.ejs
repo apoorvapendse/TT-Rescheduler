@@ -64,33 +64,8 @@
     <!-- <img class="material-symbolsaccount-box-s-icon" alt="" src="/prof-dash-assets/materialsymbolsaccountboxsharp.svg" /> -->
   </div>
   <script src="/prof-dash-assets/prof_dashboard.js"></script>
-  <script>
-    const profID = localStorage.getItem("profID")
-    console.log(profID)
-    reqList = document.getElementById('req-list')
-    
-    const getData = async () => {
-      try {
-        let data = await fetch(`/api/get/faculty/${profID}`)
-        data = await data.json()
-        console.log(data);
-        data.receivedRequests.forEach((req) => {
-          const li = document.createElement('li')
-          li.innerHTML = `<li>
-              ${req.time}
-              <button class="dropdown-item" type="button">Accept</button>
-              <button class="dropdown-item" type="button">Deny</button>
-            </li>`
-          reqList.appendChild(li);
-        })
-      } catch (err) {
-        console.log('tt doesnt exist add new');
-      }
-    }
-    getData()
-
-
-  </script>
+  
+  <script src="/scripts/profDash.js" type="module"></script>
 </body>
 
 </html>

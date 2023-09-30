@@ -19,10 +19,9 @@ router.post("/signup-admin", auth_control.adminSignupPost);
 router.get("/login-admin", auth_control.adminLoginGet);
 router.post("/login-admin", auth_control.adminLoginPost);
 
-// should prob create different routes.js file
-// for /admin and /faculty
 router.get("/admin/dashboard", checkAdmin, admin_control.adminDashGet);
 router.get("/prof/dashboard", prof_control.profDashGet);
+router.post("/prof/dashboard", prof_control.profDashPost);
 router.post(
   "/admin/dashboard/createFaculty",
   checkAdmin,
