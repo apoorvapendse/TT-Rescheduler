@@ -100,12 +100,6 @@ const saveTimetablePost = async (req, res) => {
       .then(() => console.log("saved to prof"))
       .catch((err) => console.log(err));
     console.log(prof.name);
-    // everything working as expected till here
-    // apoorva take a look here
-    // Professors.findOne({ _id: req.params.id })
-    //   .populate('tt')
-    //   .then(() => console.log('done'))
-    //   .catch((err) => console.log(err))
   }
 
   res.status(200).json("all good");
