@@ -21,11 +21,14 @@ const getData = async () => {
 
     // creating incoming request dropup down
     data.receivedRequests.forEach((req, i) => {
-      const li = document.createElement("li");
-      li.innerHTML = `${req.time}
-          <button class="btn btn-primary accept" name='${i}' type="button">Accept</button>
-          <button class="btn btn-danger" type="button">Deny</button>`;
-      reqList.appendChild(li);
+      console.log(req);
+      if (req.approved == false) {
+        const li = document.createElement("li");
+        li.innerHTML = `${req.time}
+        <button class="btn btn-primary accept" name='${i}' type="button">Accept</button>
+        <button class="btn btn-danger" type="button">Deny</button>`;
+        reqList.appendChild(li);
+      }
     });
 
     // making a post request on clicking accept button
