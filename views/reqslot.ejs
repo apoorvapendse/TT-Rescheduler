@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Request Slot</title>
+</head>
+
+<body>
+  <h1>request slot</h1>
+
+  <form action="/faculty/request-slot" method="post"
+    style="display: flex;height: 100%;width: 100%;justify-content: center;flex-direction: column;align-items: center;">
+
+    <select name="time">
+      <option value="8">8:00 AM</option>
+      <option value="9">9:00 AM</option>
+      <option value="10">10:00 AM</option>
+      <option value="11">11:00 AM</option>
+      <option value="12">12:00 PM</option>
+      <option value="13">1:00 PM</option>
+      <option value="14">2:00 PM</option>
+      <option value="15">3:00 PM</option>
+      <option value="16">4:00 PM</option>
+      <option value="17">5:00 PM</option>
+    </select>
+
+    <input type="number" placeholder="Enter room num" name="roomID">
+    <br>
+
+    <select name="day">
+      <option value="mon">Monday</option>
+      <option value="tue">Tuesday</option>
+      <option value="wed">Wednesday</option>
+      <option value="thu">Thursday</option>
+      <option value="fri">Friday</option>
+    </select>
+
+    <br>
+    <button type="submit">Submit</button>
+
+  </form>
+
+</body>
+
+</html>

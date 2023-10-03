@@ -45,9 +45,10 @@ export default router
 =======
 import * as auth_control from "../Controllers/auth.js";
 import * as admin_control from "../Controllers/admin.js";
-import { checkAdmin } from "../Controllers/authMiddleware.js";
+import { checkAdmin, checkProf } from "../Controllers/authMiddleware.js";
 import * as prof_control from "../Controllers/faculty.js";
-import * as api from "../Controllers/api.js"
+import * as api from "../Controllers/api.js";
+import { getRequestSlot, postRequestSlot } from "../Controllers/slot.js";
 
 const router = express.Router();
 
@@ -62,23 +63,36 @@ router.post("/signup-admin", auth_control.adminSignupPost);
 router.get("/login-admin", auth_control.adminLoginGet);
 router.post("/login-admin", auth_control.adminLoginPost);
 
-// should prob create different routes.js file 
-// for /admin and /faculty
 router.get("/admin/dashboard", checkAdmin, admin_control.adminDashGet);
+router.get("/prof/dashboard", prof_control.profDashGet);
+router.post("/prof/dashboard", prof_control.profDashPost);
 router.post(
   "/admin/dashboard/createFaculty",
   checkAdmin,
   admin_control.createFacultyPost
 );
 
-router.get('/faculty/dashboard', prof_control.profDashGet)
+router.get("/faculty/dashboard", prof_control.profDashGet);
 
-router.get('/admin/dashboard/:id', admin_control.editTimetabeGet)
-router.post('/admin/dashboard/:id', admin_control.saveTimetablePost)
+router.get("/admin/dashboard/:id", checkAdmin, admin_control.editTimetabeGet);
+router.post("/admin/dashboard/:id", admin_control.saveTimetablePost);
 
+router.post(
+  "/api/post/faculty/change-time-table",
+  checkProf,
+  prof_control.postChangeTimeTable
+);
 // api to get faculty objects
-router.get("/api/get/faculty", api.getFaculty)
+router.get("/api/get/faculty", checkAdmin, api.getFaculty);
 
+// api to get timetable
+router.get("/api/get/:facultyId", api.getTT);
+
+// api to get faculty object
+router.get("/api/get/faculty/:id", api.getFacultyById);
+
+router.get("/faculty/request-slot", checkProf, getRequestSlot);
+router.post("/faculty/request-slot", checkProf, postRequestSlot);
 
 export default router;
 >>>>>>> a24b102ef3c67456a20f70d4d755d7f04edebad8

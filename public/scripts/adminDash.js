@@ -15,7 +15,10 @@ function displayProfData() {
     console.log(item);
     const newProfItem = document.createElement("li");
     newProfItem.style.margin = "12px auto";
-    newProfItem.innerHTML = `<a href="dashboard/${item.id}">Name:${item.name}  Email:${item.email}</a>`;
+	  newProfItem.style.color = "white";
+	  newProfItem.style.fontWeight = "bold";
+	  newProfItem.style.textDecoration = "none";	
+    newProfItem.innerHTML = `<a href="/admin/dashboard/${item.id}">Name:${item.name}  Email:${item.email}</a>`;
 
     newProfItem.addEventListener("click", async () => {
       console.log("clicked");
