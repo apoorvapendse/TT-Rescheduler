@@ -33,6 +33,11 @@ router.get("/faculty/dashboard", prof_control.profDashGet);
 router.get("/admin/dashboard/:id", checkAdmin, admin_control.editTimetabeGet);
 router.post("/admin/dashboard/:id", admin_control.saveTimetablePost);
 
+router.post(
+  "/api/post/faculty/change-time-table",
+  checkProf,
+  prof_control.postChangeTimeTable
+);
 // api to get faculty objects
 router.get("/api/get/faculty", checkAdmin, api.getFaculty);
 

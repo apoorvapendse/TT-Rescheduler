@@ -10,15 +10,19 @@ const profDashPost = async (req, res) => {
   const profID = jwtDecode(req.cookies.proftoken).id;
   console.log(profID);
 
-  try{
-    const prof = await Professors.findOne({_id: profID})
-    prof.receivedRequests[req.body.index].approved = true
+  try {
+    const prof = await Professors.findOne({ _id: profID });
+    prof.receivedRequests[req.body.index].approved = true;
     prof.save();
-  }catch(err){
-    console.log(err)
+  } catch (err) {
+    console.log(err);
   }
 
   res.status(200).json("bimbimbambam");
 };
 
-export { profDashGet, profDashPost };
+const postChangeTimeTable = async (req, res) => {
+  console.log(req.body);
+};
+
+export { profDashGet, profDashPost, postChangeTimeTable };

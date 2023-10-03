@@ -20,12 +20,13 @@ const getData = async () => {
     data = await data.json();
 
     // creating incoming request dropup down
-    data.receivedRequests.forEach((req, i) => {
+    data.receivedRequests.forEach(async (req, i) => {
       console.log(req);
-      if (req.approved == false) {
+
+      if (!req.approved) {
         const li = document.createElement("li");
         li.innerHTML = `${req.time}
-        <button class="btn btn-primary accept" name='${i}' type="button">Accept</button>
+        <button class="btn btn-primary accept" name='${i}' senderID=${req._id} receiverID=${profID} type="button">Accept</button>
         <button class="btn btn-danger" type="button">Deny</button>`;
         reqList.appendChild(li);
       }
@@ -35,16 +36,34 @@ const getData = async () => {
     const acceptBtn = document.querySelectorAll(".accept");
     console.log(acceptBtn);
     acceptBtn.forEach((btn) => {
-      btn.addEventListener("click", () => {
-        fetch("/prof/dashboard", {
+      btn.addEventListener("click", async (event) => {
+        const senderID = event.target.getAttribute("senderID");
+        const receiverID = event.target.getAttribute("receiverID");
+        let postData = {
+          senderID,
+          receiverID,
+          index: btn.name,
+        };
+        console.log("postData:", postData);
+
+        await fetch("/prof/dashboard", {
           method: "POST",
-          body: JSON.stringify({
-            index: btn.name,
-          }),
+          body: JSON.stringify(postData),
           headers: {
             "Content-type": "application/json; charset=UTF-8",
           },
         });
+
+        // console.log(data);
+        // const requestOptions = {
+        //   method: "POST", // Specify the HTTP method
+        //   headers: {
+        //     "Content-Type": "application/json", // Set the content type of the request body
+        //     // Add any other headers if needed, e.g., authorization headers
+        //   },
+        //   body: JSON.stringify(data), // Convert the data to JSON format and set it as the request body
+        // };
+        // await fetch(`/api/post/faculty/change-time-table`, requestOptions);
       });
     });
 
