@@ -123,17 +123,8 @@ form {
     border-radius: 5px;
     cursor: pointer;
     margin: 10px; 
-    position: absolute;
     top: 0;
     left: 0;
-}
-
-#add-prof {
-    left: 20px; 
-}
-
-#remove-prof {
-    left: 150px; 
 }
 
 #add-prof:hover,
@@ -174,16 +165,19 @@ form {
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    position: absolute;
     top: 180px; 
 }
 
-#add-prof {
-    left: 770px;
+.centered{
+    position :relative;
+    margin-left:auto;
+    margin-right:auto;
+    top: -21vh
 }
 
-#remove-prof {
-    left: 630px; 
+li>a{
+    text-decoration: none;
+    color: black;
 }
 
 #home:hover,
@@ -254,6 +248,8 @@ button[type="submit"] {
     left: 50%;
     transform: translateX(-50%); 
     z-index: 2;
+    -ms-overflow-style: none;  /* IE and Edge */
+     scrollbar-width: none;  /* Firefox */
 }
 
 .profList li {
@@ -264,7 +260,7 @@ button[type="submit"] {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px;
+    padding: 12px;
     transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
 }
 
@@ -330,7 +326,6 @@ button[type="submit"] {
     padding: 20px; 
     border-radius: 10px; 
     margin-top: 20px; 
-    left: 540px;
     position:absolute;
 }
 
