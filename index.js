@@ -20,6 +20,10 @@ app.use(cookieParser());
 //use router
 app.use("/", router);
 
+// const mongoURI = process.env.MONGO_URI;
+// const port = process.env.PORT;
+// const jwtPassword = process.env.JWT_PASSWD;
+
 connectDB().then(() => {
   app.listen(process.env.PORT, () => {
     console.log("server is up at ", process.env.PORT);
