@@ -5,6 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Dashboard</title>
     <link rel="stylesheet" href="/admindash.css" />
+    <style>
+        .profList::-webkit-scrollbar {
+            width: 0.1em;
+        }
+
+        .profList::-webkit-scrollbar-thumb {
+            background-color: transparent;
+        }
+    </style>
 </head>
 <body>
   <div class="header">
@@ -12,13 +21,14 @@
     <button id="about">About</button> 
 </div>
 <div class="line-design-1"></div>
-    <h2>PROFESSOR ACCOUNT FORM</h2>
+    <div class="form-container">
     <form method="post" action="/admin/dashboard/createFaculty">
         <input name="name" type="text" placeholder="name">
         <input name="email" type="email" placeholder="email">
         <input name="password" type="password" placeholder="pass">
         <button type="submit">Submit</button>
     </form>
+    </div>
     <h1 id="timetable-rescheduler">TIMETABLE RESCHEDULER</h1>
     <button id="add-prof">Add Prof</button>
 <button id="remove-prof">Remove Prof</button>

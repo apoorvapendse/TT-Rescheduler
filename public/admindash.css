@@ -19,7 +19,7 @@
 }
 
 button {
-    background: none;
+    background: none;   
     border: none;
     cursor: pointer;
 }
@@ -90,12 +90,6 @@ button:nth-child(2) {
 }
 
 
-h2 {
-    font-size: 24px;
-    margin-top: 20px;
-    color: var(--color-darkorange); 
-    color: #f48620;
-}
 
 header {
     display: flex;
@@ -110,6 +104,14 @@ header {
 }
 form {
     margin-top: 10px;
+    margin: auto;
+    max-width: 400px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 400px; 
+    z-index: 1;
 }
 
 #add-prof,
@@ -220,6 +222,11 @@ button[type="submit"] {
     list-style-type: none;
     margin: 0;
     padding: 0;
+    max-height: 300px; 
+    overflow-y: auto; 
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
 }
 
 
@@ -232,4 +239,106 @@ button[type="submit"] {
     transform: scale(1.1);
     transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
     box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
+}
+
+.profList {
+    list-style-type: none;
+    padding: 0;
+    max-height: 300px; 
+    overflow-y: auto; 
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    top: 70%; 
+    left: 50%;
+    transform: translateX(-50%); 
+    z-index: 2;
+}
+
+.profList li {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.profList li:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+}
+
+.profList .profDetails {
+    display: flex;
+    align-items: center;
+}
+
+.profList .profAvatar {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: #f48620;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    margin-right: 20px;
+    font-size: 1.5rem;
+}
+
+.profList .profInfo {
+    flex-grow: 1;
+}
+
+.profList .profName {
+    font-weight: bold;
+    color: #333;
+    font-size: 1.2rem;
+}
+
+.profList .profEmail {
+    color: #777;
+}
+
+.profList .profActions {
+    display: flex;
+    gap: 10px;
+}
+
+.profList .profActions button {
+    background-color: #f48620;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.profList .profActions button:hover {
+    background-color: #ff8c00;
+}
+
+.form-container {
+    background-color: #ccc; 
+    padding: 20px; 
+    border-radius: 10px; 
+    margin-top: 20px; 
+    left: 540px;
+    position:absolute;
+}
+
+
+form {
+    left:190px;
+    top:100px;
+    max-width: 400px; 
+    margin: auto;
+    position: relative;
 }
