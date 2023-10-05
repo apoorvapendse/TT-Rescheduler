@@ -1,0 +1,57 @@
+body {
+    margin: 0;
+    background-color: #222; /* Dark background color */
+    color: var(--color-darkorange); /* Orange font color for headings */
+    font-family: var(--font-inter);
+    font-size: 16px;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    padding: 20px; /* Add padding for spacing */
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 400px; /* Adjust the maximum width as needed */
+    padding: 20px; /* Add padding for spacing */
+    background-color: #333; /* Dark background for form */
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Box shadow for form */
+}
+
+label {
+    margin-bottom: 8px; /* Add margin between labels */
+}
+
+input,
+select {
+    margin-bottom: 16px; /* Add margin between input/select elements */
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #444; /* Input background color */
+    color: #fff; /* Input font color */
+}
+
+button {
+    padding: 10px 20px;
+    background-color: var(--color-darkorange);
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+button:hover {
+    background-color: #f48620; /* Darker orange on hover */
+    transform: scale(1.05); /* Scale up on hover */
+}
