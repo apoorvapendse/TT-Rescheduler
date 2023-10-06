@@ -6,47 +6,59 @@ body {
     font-size: 16px;
 }
 
+:root {
+    --color-darkorange: #f48620; /* Define the same orange color variable here */
+}
+
+.centered {
+    text-align: center;
+    margin-top: 2.5rem; /* Adjust spacing using rem units */
+    color: var(--color-darkorange);
+    font-size: 2.25rem; /* Adjust font size using rem units */
+}
+
 .container {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: center;    
     justify-content: center;
     height: 100vh;
-    padding: 20px; /* Add padding for spacing */
+    padding: 1rem; /* Adjust spacing using rem units */
 }
 
 .form {
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-bottom: 1rem;
     width: 100%;
-    max-width: 400px; /* Adjust the maximum width as needed */
-    padding: 20px; /* Add padding for spacing */
+    max-width: 25rem; /* Adjust maximum width using rem units */
+    padding: 1rem; /* Adjust spacing using rem units */
     background-color: #333; /* Dark background for form */
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Box shadow for form */
+    border-radius: 1rem; /* Adjust border radius using rem units */
+    box-shadow: 0 0 1rem rgba(0, 0, 0, 0.5); /* Box shadow for form */
 }
 
 label {
-    margin-bottom: 8px; /* Add margin between labels */
+    margin-bottom: 1rem; /* Adjust margin using rem units */
 }
 
 input,
 select {
-    margin-bottom: 16px; /* Add margin between input/select elements */
-    padding: 10px;
+    margin-bottom: 1rem; /* Adjust margin using rem units */
+    padding: 1rem;
     border: none;
-    border-radius: 5px;
+    border-radius: 0.7rem; /* Adjust border radius using rem units */
     background-color: #444; /* Input background color */
     color: #fff; /* Input font color */
 }
 
 button {
-    padding: 10px 20px;
+    padding: 1rem 2rem;
     background-color: var(--color-darkorange);
     color: #fff;
     border: none;
-    border-radius: 5px;
+    border-radius: 0.5rem; /* Adjust border radius using rem units */
     cursor: pointer;
     transition: background-color 0.3s ease, transform 0.3s ease;
 }
@@ -55,3 +67,4 @@ button:hover {
     background-color: #f48620; /* Darker orange on hover */
     transform: scale(1.05); /* Scale up on hover */
 }
+
