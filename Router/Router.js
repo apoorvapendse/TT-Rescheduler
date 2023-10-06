@@ -51,3 +51,4 @@ router.get("/faculty/request-slot", checkProf, getRequestSlot);
 router.post("/faculty/request-slot", checkProf, postRequestSlot);
 
 export default router;
+
