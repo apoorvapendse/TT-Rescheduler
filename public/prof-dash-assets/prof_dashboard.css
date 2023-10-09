@@ -272,14 +272,14 @@ body {
 }
 
 
-.dropdown:nth-child(4) { /* Adjust the nth-child value accordingly */
+.dropdown:nth-child(4) { 
   position: absolute;
-  top: 20px; /* Adjust the top position as needed */
-  right: 20px; /* Adjust the right position to move it to the right */
-  z-index: 2; /* Adjust the z-index to ensure it's on top */
+  top: 20px; 
+  right: 20px; 
+  z-index: 2; 
 }
 
-/* Style the dropdown buttons */
+
 .dropdown button {
   background-color: #f48620;
   color: #fff;
@@ -288,7 +288,7 @@ body {
   cursor: pointer;
 }
 
-/* Style the dropdown menus */
+
 .dropdown ul {
   background-color: #fff;
   border: 1px solid #ccc;
@@ -299,14 +299,14 @@ body {
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-/* Style the dropdown menu items */
+
 .dropdown ul li {
   padding: 10px;
   text-align: center;
   cursor: pointer;
 }
 
-/* Style the dropdown menu items on hover */
+
 .dropdown ul li:hover {
   background-color: #c7964c;
   color: #fff;
@@ -316,29 +316,29 @@ body {
 .dropdown-menu li {
   padding: 10px 20px;
   font-size: 16px;
-  color: #333; /* Text color */
-  text-align: center; /* Center-align the text */
-  transition: background-color 0.3s ease, color 0.3s ease; /* Transition effects */
+  color: #333; 
+  text-align: center; 
+  transition: background-color 0.3s ease, color 0.3s ease; 
 }
 
-/* Hover effect for dropdown list items */
+
 .dropdown-menu li:hover {
-  background-color: transparent; /* Remove background color on hover */
-  color: #ffffff; /* Text color on hover */
+  background-color: transparent; 
+  color: #ffffff; 
   cursor: pointer;
 }
 
 #approval-list li {
   padding: 10px 20px;
   font-size: 16px;
-  color: #333; /* Text color */
-  text-align: center; /* Center-align the text */
-  transition: background-color 0.3s ease, color 0.3s ease; /* Transition effects */
+  color: #333; 
+  text-align: center; 
+  transition: background-color 0.3s ease, color 0.3s ease; 
 }
 
-/* Hover effect for dropdown list items */
+
 #approval-list li:hover {
-  background-color: transparent; /* Remove background color on hover */
-  color: #f48620; /* Text color on hover */
+  background-color: transparent; 
+  color: #f48620; 
   cursor: pointer;
 }
