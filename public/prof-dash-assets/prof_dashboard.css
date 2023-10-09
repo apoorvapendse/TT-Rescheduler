@@ -264,3 +264,81 @@ body {
   cursor: pointer; 
 }
 
+.dropdown:nth-child(3) { 
+  position: absolute;
+  top: 20px; 
+  right: 170px; 
+  z-index: 2; 
+}
+
+
+.dropdown:nth-child(4) { 
+  position: absolute;
+  top: 20px; 
+  right: 20px; 
+  z-index: 2; 
+}
+
+
+.dropdown button {
+  background-color: #f48620;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+
+.dropdown ul {
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+
+.dropdown ul li {
+  padding: 10px;
+  text-align: center;
+  cursor: pointer;
+}
+
+
+.dropdown ul li:hover {
+  background-color: #c7964c;
+  color: #fff;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.dropdown-menu li {
+  padding: 10px 20px;
+  font-size: 16px;
+  color: #333; 
+  text-align: center; 
+  transition: background-color 0.3s ease, color 0.3s ease; 
+}
+
+
+.dropdown-menu li:hover {
+  background-color: transparent; 
+  color: #ffffff; 
+  cursor: pointer;
+}
+
+#approval-list li {
+  padding: 10px 20px;
+  font-size: 16px;
+  color: #333; 
+  text-align: center; 
+  transition: background-color 0.3s ease, color 0.3s ease; 
+}
+
+
+#approval-list li:hover {
+  background-color: transparent; 
+  color: #f48620; 
+  cursor: pointer;
+}
