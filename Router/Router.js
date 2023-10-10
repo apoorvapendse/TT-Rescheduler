@@ -20,7 +20,7 @@ router.get("/login-admin", auth_control.adminLoginGet);
 router.post("/login-admin", auth_control.adminLoginPost);
 
 router.get("/admin/dashboard", checkAdmin, admin_control.adminDashGet);
-router.get("/prof/dashboard", prof_control.profDashGet);
+router.get("/prof/dashboard", checkProf ,prof_control.profDashGet);
 router.post("/prof/dashboard", prof_control.profDashPost);
 router.post(
   "/admin/dashboard/createFaculty",
