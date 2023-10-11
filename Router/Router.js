@@ -5,6 +5,7 @@ import { checkAdmin, checkProf } from "../Controllers/authMiddleware.js";
 import * as prof_control from "../Controllers/faculty.js";
 import * as api from "../Controllers/api.js";
 import { getRequestSlot, postRequestSlot } from "../Controllers/slot.js";
+import { mailProfessor } from "../Controllers/request-status-mail.js";
 
 const router = express.Router();
 
@@ -20,7 +21,7 @@ router.get("/login-admin", auth_control.adminLoginGet);
 router.post("/login-admin", auth_control.adminLoginPost);
 
 router.get("/admin/dashboard", checkAdmin, admin_control.adminDashGet);
-router.get("/prof/dashboard", checkProf ,prof_control.profDashGet);
+router.get("/prof/dashboard", checkProf, prof_control.profDashGet);
 router.post("/prof/dashboard", prof_control.profDashPost);
 router.post(
   "/admin/dashboard/createFaculty",
@@ -50,5 +51,7 @@ router.get("/api/get/faculty/:id", api.getFacultyById);
 router.get("/faculty/request-slot", checkProf, getRequestSlot);
 router.post("/faculty/request-slot", checkProf, postRequestSlot);
 
-export default router;
+// api to send mail on timetable change request resolution
+router.post("/faculty/send-request-status-mail", checkProf, mailProfessor);
 
+export default router;

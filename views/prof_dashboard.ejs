@@ -21,23 +21,28 @@
     <i class="timetable-rescheduler">Timetable Rescheduler</i>
 
     <!-- request dropdown -->
-    <div class="dropdown">
-      <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-        Dropdown
-      </button>
-      <ul id="req-list" class="dropdown-menu">
+    <div class="dropdownContainer"
+      style="display: flex; justify-content: space-evenly; background-color: green; width: 50%; margin-left: auto;align-items: top; padding-top:20px; ">
 
-      </ul>
-    </div>
+      <div class="dropdown">
+        <button class="btn btn-secondary dropdown-toggle " type="button" data-bs-toggle="dropdown"
+          aria-expanded="false">
+          Received Requests
+        </button>
+        <ul id="req-list" class="dropdown-menu">
 
-    <!-- approval dropdown -->
-    <div class="dropdown">
-      <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-        Dropdown
-      </button>
-      <ul id="approval-list" class="dropdown-menu">
-        req
-      </ul>
+        </ul>
+      </div>
+
+      <!-- approval dropdown -->
+      <div class="dropdown">
+        <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+          Status of Received Requests
+        </button>
+        <ul id="approval-list" class="dropdown-menu">
+          req
+        </ul>
+      </div>
     </div>
 
     <div class="volatile-everyday">

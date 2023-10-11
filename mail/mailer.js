@@ -34,5 +34,5 @@ let sendMail = () => {
     }
   });
 };
-sendMail();
+
 export default sendMail;

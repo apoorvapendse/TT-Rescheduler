@@ -21,13 +21,20 @@ const getData = async () => {
 
     // creating incoming request dropup down
     data.receivedRequests.forEach(async (req, i) => {
-      console.log(req);
+      console.log("received requests:", req);
 
+      let suffix = "";
+      if (+req.time >= 8 && +req.time <= 11) {
+        suffix = "AM";
+      } else {
+        suffix = "PM";
+      }
       if (!req.approved) {
         const li = document.createElement("li");
-        li.innerHTML = `${req.time}
+
+        li.innerHTML = `time:${req.time} ${suffix}<br>day:${req.day}<br>room:${req.roomID}<br>
         <button class="btn btn-primary accept" name='${i}' senderID=${req._id} receiverID=${profID} type="button">Accept</button>
-        <button class="btn btn-danger" type="button">Deny</button>`;
+        <button class="btn btn-danger" type="button">Deny</button><hr>`;
         reqList.appendChild(li);
       }
     });
@@ -70,9 +77,16 @@ const getData = async () => {
     // creating sent requests dropdown
     // it shows the status of your sent requests
     data.receivedRequests.forEach((req) => {
+      let suffix = "";
+      if (+req.time >= 8 && +req.time <= 11) {
+        suffix = "AM";
+      } else {
+        suffix = "PM";
+      }
       const li = document.createElement("li");
       li.innerHTML = `
-        ${req.time}
+        ${req.time} ${suffix}<br>day:${req.day}<br>room:${req.roomID}<br>
+        
         <button class="btn ${
           req.approved ? "btn-success" : "btn-danger"
         }" type="button" disabled>
