@@ -112,25 +112,25 @@
     const profID = localStorage.getItem("profID")
     // console.log("professor ID:", profID)
 
-    
+
     // get data if exists to table
     const getData = async () => {
       let i = 0
-      
-      try{
+
+      try {
         let data = await fetch(`/api/get/${profID}`)
         data = await data.json()
         console.log(data);
         form.querySelectorAll('input').forEach((input) => {
           input.value = data[i++].roomID
         })
-      }catch(err){
+      } catch (err) {
         console.log('tt doesnt exist add new');
       }
     }
     getData()
 
-    
+
     form.onsubmit = (async (e) => {
       e.preventDefault();
       console.log("form submitted")
@@ -161,4 +161,5 @@
 
   </script>
 </body>
+
 </html>

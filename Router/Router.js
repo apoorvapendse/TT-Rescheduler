@@ -53,5 +53,6 @@ router.post("/faculty/request-slot", checkProf, postRequestSlot);
 
 // api to send mail on timetable change request resolution
 router.post("/faculty/send-request-status-mail", checkProf, mailProfessor);
+router.get("/my-timetable", prof_control.profReadonlyTTGet);
 
 export default router;
