@@ -1,84 +1,151 @@
 <!DOCTYPE html>
 <html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="initial-scale=1, width=device-width" />
 
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="initial-scale=1, width=device-width" />
+    <link rel="stylesheet" href="/prof-dash-assets/prof_dashboard.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,800;1,700&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
+  </head>
 
-  <link rel="stylesheet" href="/prof-dash-assets/prof_dashboard.css" />
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,800;1,700&display=swap" />
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" />
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
-    crossorigin="anonymous"></script>
-</head>
+  <body>
+    <div class="desktop-1">
+      <div class="desktop-1-child"></div>
+      <i class="timetable-rescheduler">Timetable Rescheduler</i>
 
-<body>
-  <div class="desktop-1">
-    <div class="desktop-1-child"></div>
-    <i class="timetable-rescheduler">Timetable Rescheduler</i>
+      <!-- request dropdown -->
+      <div
+        class="dropdownContainer"
+        style="
+          display: flex;
+          justify-content: space-evenly;
+          background-color: green;
+          width: 50%;
+          margin-left: auto;
+          align-items: top;
+          padding-top: 20px;
+        "
+      >
+        <div class="dropdown">
+          <button
+            class="btn btn-secondary dropdown-toggle"
+            type="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            Received Requests
+          </button>
+          <ul id="req-list" class="dropdown-menu"></ul>
+        </div>
 
-    <!-- request dropdown -->
-    <div class="dropdownContainer"
-      style="display: flex; justify-content: space-evenly; background-color: green; width: 50%; margin-left: auto;align-items: top; padding-top:20px; ">
-
-      <div class="dropdown">
-        <button class="btn btn-secondary dropdown-toggle " type="button" data-bs-toggle="dropdown"
-          aria-expanded="false">
-          Received Requests
-        </button>
-        <ul id="req-list" class="dropdown-menu">
-
-        </ul>
+        <!-- approval dropdown -->
+        <div class="dropdown">
+          <button
+            class="btn btn-secondary dropdown-toggle"
+            type="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            Status of Received Requests
+          </button>
+          <ul id="approval-list" class="dropdown-menu">
+            req
+          </ul>
+        </div>
       </div>
 
-      <!-- approval dropdown -->
-      <div class="dropdown">
-        <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-          Status of Received Requests
-        </button>
-        <ul id="approval-list" class="dropdown-menu">
-          req
-        </ul>
+      <div class="volatile-everyday">
+        <p class="volatile">VOLATILE</p>
+        <p class="everyday">EVERYDAY.</p>
       </div>
+      <img
+        class="desktop-1-inner"
+        alt=""
+        src="/prof-dash-assets/vector-4.svg"
+      />
+
+      <img class="vector-icon" alt="" src="/prof-dash-assets/vector-41.svg" />
+
+      <img
+        class="desktop-1-child1"
+        alt=""
+        src="/prof-dash-assets/vector-1.svg"
+      />
+
+      <img
+        class="desktop-1-child2"
+        alt=""
+        src="/prof-dash-assets/vector-3.svg"
+      />
+
+      <img
+        class="desktop-1-child3"
+        alt=""
+        src="/prof-dash-assets/vector-4.svg"
+      />
+
+      <img
+        class="desktop-1-child4"
+        alt=""
+        src="/prof-dash-assets/vector-5.svg"
+      />
+
+      <img
+        class="desktop-1-child5"
+        alt=""
+        src="/prof-dash-assets/vector-7.svg"
+      />
+
+      <img
+        class="desktop-1-child6"
+        alt=""
+        src="/prof-dash-assets/vector-1.svg"
+      />
+
+      <img
+        class="desktop-1-child7"
+        alt=""
+        src="/prof-dash-assets/vector-3.svg"
+      />
+
+      <a class="request-slot" href="/faculty/request-slot">REQUEST SLOT</a>
+      <img
+        class="desktop-1-child6"
+        alt=""
+        src="/prof-dash-assets/vector-1.svg"
+      />
+
+      <!-- <i id="faculty" class="faculty">FACULTY</i> -->
+      <img
+        class="desktop-1-child7"
+        alt=""
+        src="/prof-dash-assets/vector-3.svg"
+      />
+
+      <!-- <img class="material-symbolsaccount-box-s-icon" alt="" src="/prof-dash-assets/materialsymbolsaccountboxsharp.svg" /> -->
     </div>
+    <a id="my-timetable" href="/my-timetable"><strong>My Timetable</strong></a>
 
-    <div class="volatile-everyday">
-      <p class="volatile">VOLATILE</p>
-      <p class="everyday">EVERYDAY.</p>
-    </div>
-    <img class="desktop-1-inner" alt="" src="/prof-dash-assets/vector-4.svg" />
+    <script src="/prof-dash-assets/prof_dashboard.js"></script>
 
-    <img class="vector-icon" alt="" src="/prof-dash-assets/vector-41.svg" />
-
-    <img class="desktop-1-child1" alt="" src="/prof-dash-assets/vector-1.svg" />
-
-    <img class="desktop-1-child2" alt="" src="/prof-dash-assets/vector-3.svg" />
-
-    <img class="desktop-1-child3" alt="" src="/prof-dash-assets/vector-4.svg" />
-
-    <img class="desktop-1-child4" alt="" src="/prof-dash-assets/vector-5.svg" />
-
-    <img class="desktop-1-child5" alt="" src="/prof-dash-assets/vector-7.svg" />
-
-    <img class="desktop-1-child6" alt="" src="/prof-dash-assets/vector-1.svg" />
-
-    <img class="desktop-1-child7" alt="" src="/prof-dash-assets/vector-3.svg" />
-
-    <a class="request-slot" href="/faculty/request-slot">REQUEST SLOT</a>
-    <img class="desktop-1-child6" alt="" src="/prof-dash-assets/vector-1.svg" />
-
-
-    <!-- <i id="faculty" class="faculty">FACULTY</i> -->
-    <img class="desktop-1-child7" alt="" src="/prof-dash-assets/vector-3.svg" />
-
-    <!-- <img class="material-symbolsaccount-box-s-icon" alt="" src="/prof-dash-assets/materialsymbolsaccountboxsharp.svg" /> -->
-  </div>
-  <script src="/prof-dash-assets/prof_dashboard.js"></script>
-
-  <script src="/scripts/profDash.js" type="module"></script>
-</body>
-
+    <script src="/scripts/profDash.js" type="module"></script>
+  </body>
 </html>

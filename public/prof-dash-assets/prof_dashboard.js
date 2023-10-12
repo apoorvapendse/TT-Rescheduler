@@ -13,4 +13,9 @@ document.addEventListener("DOMContentLoaded", function () {
     requestSlot.style.backgroundColor = "transparent"; // Reset the background color
     requestSlot.style.color = "#f7af7b"; // Reset the text color
   });
+// event listener for my-timetable
+myTimetable.addEventListener("click", function () {
+  // Redirect to the Express.js route that renders the EJS template
+  window.location.href = "/my-timetable"; 
+});
 });

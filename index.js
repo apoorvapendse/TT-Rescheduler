@@ -8,6 +8,7 @@ dotenv.config();
 
 const app = express();
 //setting up middleware
+app.set('view engine', 'ejs'); // EJS template engine 
 app.use(express.json()); // for JSON data
 // OR
 app.use(express.urlencoded({ extended: true })); //to access data from request bodies
@@ -23,7 +24,14 @@ app.use("/", router);
 // const mongoURI = process.env.MONGO_URI;
 // const port = process.env.PORT;
 // const jwtPassword = process.env.JWT_PASSWD;
+// Define a route for 'my-timetable' using  GET method.
+app.get('/my-timetable', (req, res) => {
+  // Render the 'my-timetable'
 
+  
+  res.render('my-timetable');
+  // for rendering the EJS template.
+});
 connectDB().then(() => {
   app.listen(process.env.PORT, () => {
     console.log("server is up at ", process.env.PORT);

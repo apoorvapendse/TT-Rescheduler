@@ -1,0 +1,61 @@
+body {
+    font-family: 'Pacifico', cursive;
+    background-color: #454545;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+form {
+    background-color: #FFA559;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    width: 100%;
+    border: 2px solid black;
+}
+
+th, td {
+    padding: 10px;
+    text-align: center;
+    border: 1px solid black;
+}
+
+th {
+    background-color: #FF6000;
+    color: white;
+}
+
+tr:nth-child(even) {
+    background-color: #454545;
+}
+
+input[type="text"] {
+    padding: 10px;
+    border: 1px solid #2b0808;
+    border-radius: 13px;
+    box-shadow: 3px 3px 6px #5e2828;
+}
+
+input[type="text"]:focus {
+    color: #403e3b;
+    outline: none;
+    box-shadow: 2px 2px 5px #4e5051;
+}
+
+input[type="text"][name^="mon"],
+input[type="text"][name^="tue"],
+input[type="text"][name^="wed"],
+input[type="text"][name^="thu"],
+input[type="text"][name^="fri"] {
+    background-color: #FFE6C7;
+}
