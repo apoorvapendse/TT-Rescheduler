@@ -1,70 +1,121 @@
 body {
     margin: 0;
-    background-color: #222; /* Dark background color */
-    color: var(--color-darkorange); /* Orange font color for headings */
-    font-family: var(--font-inter);
+    line-height: normal;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: conic-gradient(
+        from 169.92deg at 50% 50%,
+        #0f0d0d 0deg,
+        rgba(15, 13, 13, 0.94) 279.28deg,
+        rgba(15, 13, 13, 0) 359.85deg
+    );
+    color: #f48620; 
+    font-family: 'Inter', sans-serif;
     font-size: 16px;
-}
-
-:root {
-    --color-darkorange: #f48620; /* Define the same orange color variable here */
 }
 
 .centered {
     text-align: center;
-    margin-top: 2.5rem; /* Adjust spacing using rem units */
-    color: var(--color-darkorange);
-    font-size: 2.25rem; /* Adjust font size using rem units */
+    margin-top: 1.5rem;
+    color: #f48620;
+    font-size: 2.25rem;
 }
 
-.container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;    
-    justify-content: center;
-    height: 100vh;
-    padding: 1rem; /* Adjust spacing using rem units */
-}
-
-.form {
+.form-container {
+    background-color: #0f0d0d;
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 20px;
+    max-width: 400px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-bottom: 1rem;
-    width: 100%;
-    max-width: 25rem; /* Adjust maximum width using rem units */
-    padding: 1rem; /* Adjust spacing using rem units */
-    background-color: #333; /* Dark background for form */
-    border-radius: 1rem; /* Adjust border radius using rem units */
-    box-shadow: 0 0 1rem rgba(0, 0, 0, 0.5); /* Box shadow for form */
 }
 
 label {
-    margin-bottom: 1rem; /* Adjust margin using rem units */
+    margin-bottom: 1rem;
+    color: #f48620;
 }
 
 input,
 select {
-    margin-bottom: 1rem; /* Adjust margin using rem units */
+    margin-bottom: 1rem;
     padding: 1rem;
     border: none;
-    border-radius: 0.7rem; /* Adjust border radius using rem units */
-    background-color: #444; /* Input background color */
-    color: #fff; /* Input font color */
+    border-radius: 0.7rem;
+    background-color: #333; 
+    color: #fff; 
+}
+
+
+select {
+    background-color: #444; 
 }
 
 button {
     padding: 1rem 2rem;
-    background-color: var(--color-darkorange);
+    background-color: #f48620;
     color: #fff;
     border: none;
-    border-radius: 0.5rem; /* Adjust border radius using rem units */
+    border-radius: 0.5rem;
     cursor: pointer;
     transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 button:hover {
-    background-color: #f48620; /* Darker orange on hover */
-    transform: scale(1.05); /* Scale up on hover */
+    background-color: #ff8c00; 
+    transform: scale(1.05); 
+}
+
+.form-container {
+    position: relative;
+    background-color: #ccc; 
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 20px;
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5); 
+    z-index: 1; 
+}
+
+.form-container input,
+.form-container select {
+    margin-bottom: 1.0rem; 
+    padding: 1rem;
+    border: none;
+    border-radius: 0.7rem;
+    background-color: #333;
+    color: #fff;
+}
+
+select {
+    background-color: #444;
+}
+.form-container .room-input {
+    margin-bottom: 0.2rem; 
+    padding: 1rem;
+    border: none;
+    border-radius: 0.7rem;
+    background-color: #333;
+    color: #fff;
+}
+
+select {
+    background-color: #444;
+}
+header {
+    background-color: #222;
+    padding: 1px;
+    color: #fff;
+    text-align: center;
+    border-radius: 0.7rem;
+    height:80px;
+    width:300px;
 }
 

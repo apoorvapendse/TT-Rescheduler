@@ -25,4 +25,8 @@ const postChangeTimeTable = async (req, res) => {
   console.log(req.body);
 };
 
-export { profDashGet, profDashPost, postChangeTimeTable };
+const profReadonlyTTGet = async (req, res) => {
+  res.render("my-timetable");
+};
+
+export { profDashGet, profDashPost, postChangeTimeTable, profReadonlyTTGet };
