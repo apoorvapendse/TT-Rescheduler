@@ -21,6 +21,10 @@ app.use(cookieParser());
 //use router
 app.use("/", router);
 
+
+
+
+
 // const mongoURI = process.env.MONGO_URI;
 // const port = process.env.PORT;
 // const jwtPassword = process.env.JWT_PASSWD;

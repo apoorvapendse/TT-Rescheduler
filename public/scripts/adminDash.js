@@ -1,3 +1,5 @@
+import { home } from "../../Controllers/auth";
+
 console.log("hello");
 
 let data = [];
@@ -27,6 +29,21 @@ function displayProfData() {
     list.append(newProfItem);
   });
 }
+// event listener for the "Home" button 
+ // document.getElementById('home').addEventListener('click', function() {
+ // window.location.href = '/index.ejs';
+//});
+home.addEventListener("click", function () {
+  // Redirect to the Express.js route that renders the EJS template
+  window.location.href = "/index"; 
+});
+
+about.addEventListener("click", function () {
+  // Redirect to the Express.js route that renders the EJS template
+  window.location.href = "/About"; 
+});
+
+
 
 getAllProfs()
   .then(() => {
