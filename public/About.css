@@ -1,0 +1,26 @@
+body {
+    font-family: Arial, sans-serif;
+    background-image: url('https://img.freepik.com/free-vector/abstract-digital-grid-vector-black-background_53876-111550.jpg');
+    background-size: cover;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #FFB000; /* Background color with opacity */
+    box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.1);
+}
+img {
+    max-width: 100%;
+    height: auto;
+}
+p {
+    font-size: 18px;
+    line-height: 1.6;
+    margin: 20px 0;
+    color: #004225;
+    font-family: 'Roboto', sans-serif;
+}

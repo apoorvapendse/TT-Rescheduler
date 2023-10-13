@@ -59,9 +59,9 @@ header {
 #timetable-rescheduler {
     font-weight: 700;
     top: -10px;
-    position: fixed;
+    position: absolute;
     color: #fff;
-    cursor: pointer;
+    
 }
 .line-design {
     width: 100%;
@@ -226,7 +226,7 @@ button[type="submit"] {
 
 #home:hover,
 #about:hover,
-#timetable-rescheduler:hover,
+
 .request-slot:hover {
     background-color: #fff; 
     color: #f48620; 

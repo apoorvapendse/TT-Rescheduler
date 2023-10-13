@@ -21,6 +21,17 @@ app.use(cookieParser());
 //use router
 app.use("/", router);
 
+// route for rendering "index.ejs"
+
+app.get("/index", (req, res) => {
+  res.render("index"); 
+});
+
+app.get("/About", (req, res) => {
+  res.render("About"); 
+});
+
+
 // const mongoURI = process.env.MONGO_URI;
 // const port = process.env.PORT;
 // const jwtPassword = process.env.JWT_PASSWD;
