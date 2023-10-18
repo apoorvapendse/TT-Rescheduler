@@ -33,7 +33,7 @@ function displayProfData() {
 //});
 home.addEventListener("click", function () {
   // Redirect to the Express.js route that renders the EJS template
-  window.location.href = "/index";
+  window.location.href = "/";
 });
 
 about.addEventListener("click", function () {
