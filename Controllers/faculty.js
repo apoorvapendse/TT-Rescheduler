@@ -61,7 +61,6 @@ const profDashPost = async (req, res) => {
   const senderProfTimeTable = await timeTables.findOne({
     associateProfID: req.body.senderID,
   });
-  console.log(senderProfTimeTable);
   if (senderProfTimeTable) {
     let senderProfSwapDay = senderProfTimeTable[dayQuery];
     senderProfSwapDay.forEach((slot) => {
