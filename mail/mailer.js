@@ -2,12 +2,12 @@ import nodemailer from "nodemailer";
 import dotenv from "dotenv";
 dotenv.config();
 
-let sendMail = () => {
+let sendMail = (emailReceiver, emailContent, emailSubject) => {
   let transporter = nodemailer.createTransport({
     service: "gmail",
     auth: {
-      user: "teammedonor@gmail.com",
-      pass: process.env.PASS,
+      user: "katherinebaker900@gmail.com",
+      pass: "ovbd gxbd uftj umyc",
     },
   });
 
@@ -17,13 +17,9 @@ let sendMail = () => {
 
       name: "ITC6",
     },
-    to: ["apoorvavpendse@gmail.com"],
-    subject: "Your timetable request has been granted",
-    html: `
-        <h1>Your timetable request has been granted successfully</h1>
-        Visit the <a href="https://ttrs.onrender.com">website</a> for further details
-
-        `,
+    to: [emailReceiver],
+    subject: emailSubject,
+    html: emailContent,
   };
 
   transporter.sendMail(mailOptions, function (error, info) {

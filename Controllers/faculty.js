@@ -1,6 +1,7 @@
 import jwtDecode from "jwt-decode";
 import Professors from "../models/Faculty.js";
 import timeTables from "../models/TimeTable.js";
+import sendMail from "../mail/mailer.js";
 
 const profDashGet = (req, res) => {
   res.status(200).render("prof_dashboard.ejs");
@@ -71,6 +72,24 @@ const profDashPost = async (req, res) => {
     });
   }
   senderProfTimeTable.save();
+
+  //now sending mails to both of them about this
+  const recProf = await Professors.findById(req.body.receiverID);
+  const sendProf = await Professors.findById(req.body.senderID);
+  console.log("accepted by: ", recProf.email);
+  console.log("accepted for :", sendProf.email);
+
+  //sending mail to receiver prof about his room id being null since he accepted the request
+  await sendMail(
+    recProf.email,
+    ` You have given up your slot on ${req.body.day} at ${req.body.time}<br>Visit <a href="https://ttrs.onrender.com">ttrs</a> to learn more`,
+    `Your Timetable has changed`
+  );
+  await sendMail(
+    sendProf.email,
+    ` You have been alloted the slot on ${req.body.day} at ${req.body.time}<br>Visit <a href="https://ttrs.onrender.com">ttrs</a> to learn more`,
+    `Your Slot Request has been accepted`
+  );
 
   res.status(200).json("bimbimbambam");
 };
