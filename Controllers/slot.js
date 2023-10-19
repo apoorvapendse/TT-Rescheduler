@@ -1,4 +1,5 @@
 import jwtDecode from "jwt-decode";
+import nodeNotifier from "node-notifier";
 import Professors from "../models/Faculty.js";
 import timeTables from "../models/TimeTable.js";
 
@@ -80,9 +81,11 @@ async function postRequestSlot(req, res) {
         senderProfID: senderProfID,
       });
       receiverProf.save();
-      res.send("<h1>Request sent successfully</h1>");
+      nodeNotifier.notify("Request sent successfully");
+      res.status(200).render("reqslot.ejs");
     } else {
-      res.send("<h1>No slot found</h1>");
+      nodeNotifier.notify("No slot found");
+      res.status(200).render("reqslot.ejs")
     }
 
     return;
