@@ -82,12 +82,12 @@ const profDashPost = async (req, res) => {
   //sending mail to receiver prof about his room id being null since he accepted the request
   await sendMail(
     recProf.email,
-    ` You have given up your slot on ${req.body.day} at ${req.body.time}<br>Visit <a href="https://ttrs.onrender.com">ttrs</a> to learn more`,
+    ` You have given up your slot on ${req.body.day} at ${req.body.time} for room number:${req.body.roomID}<br>Visit <a href="https://ttrs.onrender.com">ttrs</a> to learn more`,
     `Your Timetable has changed`
   );
   await sendMail(
     sendProf.email,
-    ` You have been alloted the slot on ${req.body.day} at ${req.body.time}<br>Visit <a href="https://ttrs.onrender.com">ttrs</a> to learn more`,
+    ` You have been alloted the slot on ${req.body.day} at ${req.body.time} for room number:${req.body.roomID}<br>Visit <a href="https://ttrs.onrender.com">ttrs</a> to learn more`,
     `Your Slot Request has been accepted`
   );
 
