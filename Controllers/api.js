@@ -11,6 +11,7 @@ const getFaculty = async (req, res) => {
       const safeobj = { id: _id, name: name, email: email };
       return safeobj;
     });
+    console.log("safeinfo:", safeInfo);
     res.status(200).send(safeInfo);
   } catch (error) {
     console.log(error);
@@ -18,30 +19,30 @@ const getFaculty = async (req, res) => {
 };
 
 const getTT = async (req, res) => {
-  try{
-    const prof = await Professors.findOne({_id: req.params.facultyId})
-    const tt = await timeTables.findOne({_id: prof.tt})
+  try {
+    const prof = await Professors.findOne({ _id: req.params.facultyId });
+    const tt = await timeTables.findOne({ _id: prof.tt });
     // the array needs to be sorted by time not day
-    const array = []
-    const days = ['Day1', 'Day2', 'Day3', 'Day4', 'Day5'];
-    for(let i = 0; i < 10; i++){
-      days.forEach(day => {
-        array.push(tt[day][i])
-      })
+    const array = [];
+    const days = ["Day1", "Day2", "Day3", "Day4", "Day5"];
+    for (let i = 0; i < 10; i++) {
+      days.forEach((day) => {
+        array.push(tt[day][i]);
+      });
     }
-    res.status(200).json(array)
-  }catch(err){
-    res.status(404).json({'success': false })
+    res.status(200).json(array);
+  } catch (err) {
+    res.status(404).json({ success: false });
   }
-}
+};
 
 const getFacultyById = async (req, res) => {
-  try{
-    const prof = await Professors.findOne({_id: req.params.id})
-    res.status(200).json(prof)
-  }catch(err){
-    res.status(404).json({'success': false })
+  try {
+    const prof = await Professors.findOne({ _id: req.params.id });
+    res.status(200).json(prof);
+  } catch (err) {
+    res.status(404).json({ success: false });
   }
-}
+};
 
 export { getFaculty, getTT, getFacultyById };

@@ -7,6 +7,7 @@ const sentReqSchema = new mongoose.Schema({
   day: String,
   roomID: Number,
   approved: Boolean,
+  senderProfID: String,
 });
 
 const receivedReqSchema = new mongoose.Schema({
@@ -15,6 +16,7 @@ const receivedReqSchema = new mongoose.Schema({
   day: String,
   roomID: Number,
   approved: Boolean,
+  senderProfID: String,
 });
 
 const facultySchema = new mongoose.Schema({

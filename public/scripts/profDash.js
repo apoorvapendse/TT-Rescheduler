@@ -33,7 +33,7 @@ const getData = async () => {
         const li = document.createElement("li");
 
         li.innerHTML = `time:${req.time} ${suffix}<br>day:${req.day}<br>room:${req.roomID}<br>
-        <button class="btn btn-primary accept" name='${i}' senderID=${req._id} receiverID=${profID} type="button">Accept</button>
+        <button class="btn btn-primary accept" name='${i}' senderID=${req.senderProfID} receiverID=${profID} day=${req.day} time=${req.time} room=${req.roomID} type="button">Accept</button>
         <button class="btn btn-danger" type="button">Deny</button><hr>`;
         reqList.appendChild(li);
       }
@@ -42,14 +42,21 @@ const getData = async () => {
     // making a post request on clicking accept button
     const acceptBtn = document.querySelectorAll(".accept");
     console.log(acceptBtn);
-    acceptBtn.forEach((btn) => {
+    console.log(data.receivedRequests);
+    acceptBtn.forEach((btn, i) => {
       btn.addEventListener("click", async (event) => {
         const senderID = event.target.getAttribute("senderID");
         const receiverID = event.target.getAttribute("receiverID");
+        const day = event.target.getAttribute("day");
+        const time = event.target.getAttribute("time");
+        const roomID = event.target.getAttribute("room");
         let postData = {
           senderID,
           receiverID,
           index: btn.name,
+          day: day,
+          time: time,
+          roomID,
         };
         console.log("postData:", postData);
 

@@ -46,6 +46,7 @@ async function postRequestSlot(req, res) {
       roomID: req.body.roomID,
       day: req.body.day,
       approved: false,
+      senderProfID: senderProfID,
     });
 
     senderProf.save();
@@ -76,6 +77,7 @@ async function postRequestSlot(req, res) {
         time: req.body.time,
         day: req.body.day,
         approved: false,
+        senderProfID: senderProfID,
       });
       receiverProf.save();
       res.send("<h1>Request sent successfully</h1>");
