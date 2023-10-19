@@ -32,7 +32,7 @@ const getData = async () => {
       if (!req.approved) {
         const li = document.createElement("li");
 
-        li.innerHTML = `time:${req.time} ${suffix}<br>day:${req.day}<br>room:${req.roomID}<br>
+        li.innerHTML = `Time:${req.time} ${suffix}<br>Day:${req.day}<br>Room:${req.roomID}<br>
         <button class="btn btn-primary accept" name='${i}' senderID=${req.senderProfID} receiverID=${profID} day=${req.day} time=${req.time} room=${req.roomID} type="button">Accept</button>
         <button class="btn btn-danger" type="button">Deny</button><hr>`;
         reqList.appendChild(li);
@@ -92,7 +92,7 @@ const getData = async () => {
       }
       const li = document.createElement("li");
       li.innerHTML = `
-        ${req.time} ${suffix}<br>day:${req.day}<br>room:${req.roomID}<br>
+        ${req.time} ${suffix}<br>Day:${req.day}<br>Room:${req.roomID}<br>
         
         <button class="btn ${
           req.approved ? "btn-success" : "btn-danger"
