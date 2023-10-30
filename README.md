@@ -2,7 +2,7 @@
 A user-friendly website for college faculty to efficiently manage lecture schedules. Faculty members can request and coordinate schedule changes, including cancellations, preponements, and postponements, directly with other faculty. 
 
 ## What Does the Project Do?
-It helps to schedule lectures of professors in my University and also helps them to request a slot 
+It helps to schedule lectures of professors and also helps them to request a slot 
 in a decentralised manner and the respective professor in charge of the slot gets to approve the request. 
 
 The project has an admin panel where the admin will initialise the faculty account along with their initial timetable.
