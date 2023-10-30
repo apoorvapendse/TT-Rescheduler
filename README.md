@@ -5,11 +5,11 @@ A user-friendly website for college faculty to efficiently manage lecture schedu
 It helps to schedule lectures of professors and also helps them to request a slot 
 in a decentralised manner and the respective professor in charge of the slot gets to approve the request. 
 
-The project has an admin panel where the admin will initialise the faculty account along with their initial timetable.
-The faculties can later login with their credentials given by the admin to view their timetable in readonly format and also request a slot for a given room at a given day for a given hour.
-The faculty having the room possesion at that instance is dynamically found via the database query.
+The project has an admin panel where the admin will initialise the prof account along with their initial timetable.
+The profs can later login with their credentials given by the admin to view their timetable in readonly format and also request a slot for a given room at a given day for a given hour.
+The prof having the room possesion at that instance is dynamically found via the database query.
 
-If the faculty incharge of the room accepts the request, 
+If the prof incharge of the room accepts the request, 
 then both the incharge professors receive a mail about the change in their timetables and the acceptance of the request.
 (implemented using nodemailer with gmail smtp)
 
