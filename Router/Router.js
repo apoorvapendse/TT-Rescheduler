@@ -55,8 +55,4 @@ router.post("/faculty/request-slot", checkProf, postRequestSlot);
 router.post("/faculty/send-request-status-mail", checkProf, mailProfessor);
 router.get("/my-timetable", prof_control.profReadonlyTTGet);
 
-router.get("/About", (req, res) => {
-  res.render("About");
-});
-
 export default router;
